@@ -131,6 +131,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    overflow-x: clip;
+    max-width: 100vw;
+    width: 100%;
   }
 
   html.lenis,
@@ -145,6 +149,18 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    overflow-x: hidden;
+    overflow-x: clip;
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+  }
+
+  main {
+    overflow-x: hidden;
+    overflow-x: clip;
+    max-width: 100%;
+    width: 100%;
   }
 
   ::selection {
@@ -340,8 +356,15 @@
     transform: translateX(-50%);
   }
 }
+.marquee {
+  contain: paint;
+  isolation: isolate;
+  max-width: 100%;
+  overflow: hidden;
+}
 .marquee-track {
   animation: marquee var(--marquee-duration, 60s) linear infinite;
+  will-change: transform;
 }
 .marquee:hover .marquee-track {
   animation-play-state: paused;

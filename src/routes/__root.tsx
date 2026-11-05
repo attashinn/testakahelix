@@ -117,7 +117,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className="overflow-x-clip w-full max-w-full">
         <div className="intro-curtain" aria-hidden>
           <div className="intro-word font-sans text-[clamp(2.5rem,9vw,7rem)] font-medium leading-none tracking-[-0.06em]">
             <span>AKAHELIX</span>
@@ -139,7 +139,7 @@ function RootComponent() {
       <MotionConfig reducedMotion="user">
         <SmoothScroll />
         <Header />
-        <main>
+        <main className="overflow-x-clip w-full max-w-full">
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
           <Outlet />
         </main>
