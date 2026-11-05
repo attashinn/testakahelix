@@ -111,8 +111,8 @@ export function Footer() {
           whileInView={{ y: "0%" }}
           viewport={{ once: true }}
           transition={{ duration: 1.6, ease: EASE }}
-          className="select-none whitespace-nowrap text-center font-sans font-medium leading-[0.78] tracking-[-0.06em] text-mist-deep"
-          style={{ fontSize: "clamp(4rem, 19.5vw, 19rem)" }}
+          className="select-none whitespace-nowrap text-center font-sans font-medium leading-[0.78] tracking-[-0.06em] text-mist-deep truncate max-w-full"
+          style={{ fontSize: "clamp(3rem, 16vw, 19rem)" }}
           aria-hidden
         >
           AKAHELIX

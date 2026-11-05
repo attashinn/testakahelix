@@ -132,7 +132,7 @@ export function ImageReveal({
   return (
     <motion.div
       ref={ref}
-      className={cn("grain relative overflow-hidden bg-mist [isolation:isolate]", className)}
+      className={cn("grain relative overflow-hidden bg-mist [isolation:isolate] [clip-path:inset(0)]", className)}
       initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
       whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
       viewport={{ once: true, margin: "0px 0px -8% 0px" }}
@@ -144,7 +144,7 @@ export function ImageReveal({
         width={width}
         height={height}
         loading={priority ? "eager" : "lazy"}
-        style={reduce ? {} : { y, scale: 1 + parallax / 50 }}
+        style={reduce ? {} : { y }}
         className={cn("h-full w-full object-cover", imgClassName)}
       />
     </motion.div>
