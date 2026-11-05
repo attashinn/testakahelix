@@ -1,0 +1,366 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * AKAHELIX — "Clinical Blue" design system.
+ * White and cool mist surfaces, near-black ink, one cobalt blue matched to the
+ * product renders. Flat colors only: the blue lives in the photographs.
+ */
+
+@theme inline {
+  --font-display: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-paper: var(--paper);
+  --color-mist: var(--mist);
+  --color-mist-deep: var(--mist-deep);
+  --color-ink: var(--ink);
+  --color-blue: var(--blue);
+  --color-blue-deep: var(--blue-deep);
+  --color-blue-soft: var(--blue-soft);
+  --color-on-blue: var(--on-blue);
+  --color-on-blue-muted: var(--on-blue-muted);
+  --color-on-blue-line: var(--on-blue-line);
+  --color-rule: var(--rule);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+:root {
+  --radius: 0.25rem;
+
+  --paper: oklch(0.997 0.001 260);
+  --mist: oklch(0.968 0.006 262);
+  --mist-deep: oklch(0.934 0.011 269);
+  --ink: oklch(0.183 0.031 263);
+  --blue: oklch(0.505 0.255 265);
+  --blue-deep: oklch(0.42 0.21 265);
+  --blue-soft: oklch(0.947 0.024 272);
+  --on-blue: oklch(0.99 0.004 265);
+  --on-blue-muted: oklch(0.86 0.06 268);
+  --on-blue-line: oklch(0.66 0.16 266);
+  --rule: oklch(0.915 0.01 262);
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--paper);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary: var(--blue);
+  --primary-foreground: var(--on-blue);
+  --secondary: var(--mist);
+  --secondary-foreground: var(--ink);
+  --muted: var(--mist);
+  --muted-foreground: oklch(0.5 0.028 262);
+  --accent: var(--blue);
+  --accent-foreground: var(--on-blue);
+  --destructive: oklch(0.55 0.19 28);
+  --destructive-foreground: var(--on-blue);
+  --border: var(--rule);
+  --input: var(--rule);
+  --ring: var(--blue);
+
+  --chart-1: var(--blue);
+  --chart-2: var(--blue-deep);
+  --chart-3: oklch(0.7 0.12 266);
+  --chart-4: var(--mist-deep);
+  --chart-5: var(--ink);
+
+  --sidebar: var(--paper);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--blue);
+  --sidebar-primary-foreground: var(--on-blue);
+  --sidebar-accent: var(--mist);
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: var(--rule);
+  --sidebar-ring: var(--blue);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background: var(--blue);
+    color: var(--on-blue);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+/* ---------- Layout utilities ---------- */
+
+@utility container-x {
+  width: 100%;
+  max-width: 92rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  @media (width >= 48rem) {
+    padding-inline: 2rem;
+  }
+  @media (width >= 80rem) {
+    padding-inline: 2.5rem;
+  }
+}
+
+@utility grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 1.25rem;
+  @media (width >= 48rem) {
+    column-gap: 1.5rem;
+  }
+}
+
+/* Card with the top-right corner cut off, as on a specimen label. */
+@utility chamfer {
+  clip-path: polygon(0 0, calc(100% - var(--cut, 2.75rem)) 0, 100% var(--cut, 2.75rem), 100% 100%, 0 100%);
+}
+
+/* Barcode-style tick strip. */
+@utility ticks {
+  height: 14px;
+  background-image: repeating-linear-gradient(90deg, currentColor 0 1px, transparent 1px 5px);
+  opacity: 0.35;
+}
+
+/* ---------- Type utilities ---------- */
+
+@utility label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@utility display-xl {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 7.4vw, 7.25rem);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+  font-weight: 400;
+}
+
+@utility display-lg {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4.6vw, 4.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  font-weight: 400;
+}
+
+@utility display-md {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.8vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  font-weight: 400;
+}
+
+@utility lede {
+  font-size: clamp(1.02rem, 1.25vw, 1.2rem);
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+}
+
+@utility numeral {
+  font-family: var(--font-display);
+  font-variant-numeric: lining-nums tabular-nums;
+  font-weight: 300;
+  letter-spacing: -0.055em;
+  line-height: 0.9;
+}
+
+/* ---------- Interaction utilities ---------- */
+
+@utility link-draw {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.15em;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.6s var(--ease-out-expo);
+  }
+  &:hover::after,
+  &[data-status="active"]::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+@utility hairline {
+  height: 1px;
+  background: var(--rule);
+}
+
+@utility surface-blue {
+  background: var(--blue);
+  color: var(--on-blue);
+}
+
+/* Kept for the image wrapper API; no texture in this direction. */
+@utility grain {
+  position: relative;
+}
+
+/* ---------- Page intro (pure CSS so it never blocks content) ---------- */
+
+.intro-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: var(--blue);
+  color: var(--on-blue);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 1.5rem;
+  pointer-events: none;
+  animation: curtain-up 1s var(--ease-in-out-quart) 1.15s forwards;
+}
+.intro-curtain .intro-word {
+  overflow: hidden;
+}
+.intro-curtain .intro-word span {
+  display: inline-block;
+  transform: translateY(105%);
+  animation: word-in 0.9s var(--ease-out-expo) 0.15s forwards;
+}
+.intro-curtain .intro-count {
+  animation: fade-in 0.6s ease 0.3s both;
+}
+
+@keyframes curtain-up {
+  to {
+    transform: translateY(-100%);
+  }
+}
+@keyframes word-in {
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee var(--marquee-duration, 60s) linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-curtain {
+    display: none;
+  }
+  .marquee-track {
+    animation: none;
+  }
+}
