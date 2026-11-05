@@ -78,7 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" },
       { title: "AKAHELIX — Genetics laboratory set-up and validation" },
       {
         name: "description",
@@ -117,14 +117,16 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className="overflow-x-clip w-full max-w-full">
-        <div className="intro-curtain" aria-hidden>
-          <div className="intro-word font-sans text-[clamp(2.5rem,9vw,7rem)] font-medium leading-none tracking-[-0.06em]">
-            <span>AKAHELIX</span>
+      <body className="overflow-x-hidden w-full max-w-full overscroll-x-none [touch-action:pan-y]">
+        <div className="relative w-full max-w-full overflow-x-hidden min-h-screen">
+          <div className="intro-curtain" aria-hidden>
+            <div className="intro-word font-sans text-[clamp(2.5rem,9vw,7rem)] font-medium leading-none tracking-[-0.06em]">
+              <span>AKAHELIX</span>
+            </div>
+            <div className="intro-count label-mono text-on-blue-muted">Laboratory genetics · Est. 2026</div>
           </div>
-          <div className="intro-count label-mono text-on-blue-muted">Laboratory genetics · Est. 2026</div>
+          {children}
         </div>
-        {children}
         <Scripts />
       </body>
     </html>

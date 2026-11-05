@@ -82,7 +82,7 @@ export function ProcessStrand() {
           height={960}
           loading="lazy"
           style={{ x }}
-          className="relative -mt-4 block w-[112%] max-w-none md:-mt-[25vw] md:w-[108%]"
+          className="relative -mt-4 block w-full max-w-full object-cover md:-mt-[25vw] md:w-[108%] md:max-w-none"
         />
       </div>
     </section>
