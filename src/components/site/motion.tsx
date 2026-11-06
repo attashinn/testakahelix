@@ -46,13 +46,9 @@ export function RevealText({
     : { initial: "hidden", whileInView: "show", viewport: { once: true, margin: "0px 0px -12% 0px" } };
 
   return (
-    <Tag className={cn("break-words", className)} {...trigger} aria-label={text}>
+    <Tag className={className} {...trigger} aria-label={text}>
       {words.map((w, i) => (
-        <span
-          key={i}
-          aria-hidden
-          className="inline-block overflow-hidden pb-[0.12em] -mb-[0.12em] align-top mr-[0.28em] last:mr-0"
-        >
+        <span key={i} aria-hidden className="inline-block overflow-hidden pb-[0.12em] -mb-[0.12em] align-top">
           <motion.span
             className="inline-block will-change-transform"
             variants={{
@@ -61,6 +57,7 @@ export function RevealText({
             }}
           >
             {w}
+            {i < words.length - 1 ? "\u00A0" : ""}
           </motion.span>
         </span>
       ))}
@@ -132,7 +129,7 @@ export function ImageReveal({
   return (
     <motion.div
       ref={ref}
-      className={cn("grain relative overflow-hidden bg-mist [isolation:isolate] [clip-path:inset(0)]", className)}
+      className={cn("grain relative overflow-hidden bg-mist", className)}
       initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
       whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
       viewport={{ once: true, margin: "0px 0px -8% 0px" }}
@@ -144,7 +141,7 @@ export function ImageReveal({
         width={width}
         height={height}
         loading={priority ? "eager" : "lazy"}
-        style={reduce ? {} : { y }}
+        style={reduce ? {} : { y, scale: 1 + parallax / 50 }}
         className={cn("h-full w-full object-cover", imgClassName)}
       />
     </motion.div>
@@ -178,8 +175,9 @@ function FillWord({
 }) {
   const opacity = useTransform(progress, range, [0.18, 1]);
   return (
-    <span aria-hidden className={cn("relative inline-block mr-[0.28em] last:mr-0", muted)}>
+    <span aria-hidden className={cn("relative inline-block", muted)}>
       <motion.span style={{ opacity }}>{word}</motion.span>
+      {"\u00A0"}
     </span>
   );
 }
@@ -276,9 +274,9 @@ export function Marquee({
   className?: string;
 }) {
   return (
-    <div className={cn("marquee relative flex w-full max-w-full overflow-hidden contain-paint [isolation:isolate]", className)}>
+    <div className={cn("marquee relative flex overflow-hidden", className)}>
       <div
-        className="marquee-track flex shrink-0 items-center will-change-transform"
+        className="marquee-track flex shrink-0 items-center"
         style={{ ["--marquee-duration" as string]: `${duration}s` }}
       >
         <div className="flex shrink-0 items-center">{children}</div>

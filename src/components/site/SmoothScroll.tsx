@@ -9,7 +9,6 @@ export function SmoothScroll() {
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    if ("ontouchstart" in window || navigator.maxTouchPoints > 0) return;
     let raf = 0;
     let cancelled = false;
     import("lenis").then(({ default: LenisCtor }) => {

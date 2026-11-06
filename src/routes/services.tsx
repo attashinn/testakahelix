@@ -1,7 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import assayValidation from "@/assets/assay-validation.png";
+import floorPlan from "@/assets/floor-plan.png";
+import licensingPermits from "@/assets/licensing-permits.png";
 import metaphase from "@/assets/metaphase-spread.jpg";
 import microscope from "@/assets/microscope.jpg";
+import binders from "@/assets/sop-binders.jpg";
 import { Cta } from "@/components/site/Cta";
 import { FadeUp, ImageReveal, RevealText } from "@/components/site/motion";
 import { PageHero, SectionLabel } from "@/components/site/Section";
@@ -28,6 +32,29 @@ export const Route = createFileRoute("/services")({
   component: ServicesPage,
 });
 
+const serviceVisuals: Record<number, { src: string; alt: string; caption: string }> = {
+  0: {
+    src: floorPlan,
+    alt: "Laboratory design and set-up floor plan with clean unidirectional flow",
+    caption: "Fig. S-02 — Floor plan with unidirectional pre- and post-PCR flow",
+  },
+  1: {
+    src: licensingPermits,
+    alt: "Licensing and accreditation pathway for CLIA, NYS CLEP and CAP",
+    caption: "Fig. S-03 — Licensing pathway through CLIA, NYS CLEP and CAP",
+  },
+  2: {
+    src: assayValidation,
+    alt: "Assay validation and New York State LDT submission packages",
+    caption: "Fig. S-04 — Validation plans and New York State LDT submission packages",
+  },
+  3: {
+    src: binders,
+    alt: "Quality management system and SOP library",
+    caption: "Fig. S-05 — SOP library, QC rules and proficiency testing",
+  },
+};
+
 function ServicesPage() {
   return (
     <>
@@ -45,17 +72,36 @@ function ServicesPage() {
         <ol className="border-t border-border">
           {serviceLines.map((s, i) => (
             <FadeUp key={s.title} delay={0.04}>
-              <li className="group grid-12 gap-y-4 border-b border-border py-10 md:py-12">
+              <li className="group grid-12 gap-y-6 border-b border-border py-12 md:py-16">
                 <span className="numeral col-span-12 text-5xl text-muted-foreground/45 transition-colors duration-700 group-hover:text-foreground md:col-span-1 md:text-4xl">
                   {i + 1}
                 </span>
-                <h2 className="col-span-12 font-display text-[clamp(1.75rem,3vw,2.6rem)] leading-[1.05] tracking-[-0.025em] md:col-span-4">
-                  {s.title}
-                </h2>
-                <div className="col-span-12 md:col-span-6 md:col-start-7">
-                  <p className="label-mono mb-2 text-muted-foreground">What you receive</p>
-                  <p className="leading-relaxed">{s.receives}</p>
-                  <p className="label-mono mt-6 flex gap-2 text-muted-foreground">
+
+                <div className="col-span-12 md:col-span-4">
+                  <h2 className="font-display text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.08] tracking-[-0.025em]">
+                    {s.title}
+                  </h2>
+
+                  {serviceVisuals[i] && (
+                    <div className="mt-6 overflow-hidden rounded-[4px] border border-border bg-paper shadow-2xs">
+                      <img
+                        src={serviceVisuals[i]!.src}
+                        alt={serviceVisuals[i]!.alt}
+                        className="w-full object-cover aspect-[16/10] transition-transform duration-700 ease-out-expo group-hover:scale-[1.02]"
+                      />
+                      <p className="label-mono border-t border-border bg-mist/30 px-3 py-2 text-[0.6875rem] text-muted-foreground">
+                        {serviceVisuals[i]!.caption}
+                      </p>
+                    </div>
+                  )}
+                </div>
+
+                <div className="col-span-12 md:col-span-6 md:col-start-7 flex flex-col justify-between">
+                  <div>
+                    <p className="label-mono mb-2 text-muted-foreground">What you receive</p>
+                    <p className="leading-relaxed text-lg">{s.receives}</p>
+                  </div>
+                  <p className="label-mono mt-8 flex gap-2 text-muted-foreground border-t border-border/60 pt-4">
                     <span className="text-foreground">Anchored to</span>
                     <span>{s.anchor}</span>
                   </p>

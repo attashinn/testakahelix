@@ -1,39 +1,38 @@
-# AKAHELIX
+# AKAHELIX — Genetics Laboratory Set-Up & Validation
 
-High-complexity molecular genetics, cytogenetics, and oncology tumour-marker laboratory set-up, validation, and regulatory compliance (CLIA, CAP, NYSDOH CLEP).
+A high-performance modern web application for AKAHELIX, planning, building, and validating CAP and NYSDOH-ready molecular genetics and cytogenetics laboratories.
 
-## Stack
+## Tech Stack
 
-- **Framework**: TanStack Start + React 19
-- **Bundler**: Vite
+- **Framework**: TanStack Start / React 19
+- **Routing**: TanStack Router (file-based routing)
 - **Styling**: Tailwind CSS v4
-- **Animation**: Motion & Lenis smooth scrolling
-- **Type Safety**: TypeScript & Zod
+- **Motion**: Motion (Framer Motion)
+- **Smooth Scroll**: Lenis
+- **State & Data**: TanStack Query
 
-## Getting Started
+## Development
 
-### Prerequisites
-
-- Node.js >= 20
-- npm, pnpm, or bun
-
-### Development
+Prerequisites: Node.js (v20+) and npm or bun.
 
 ```sh
 # Install dependencies
 npm install
 
-# Start local dev server
+# Start local development server
 npm run dev
 
-# Run type check & build
+# Build for production
 npm run build
+
+# Run tests
+npm run test
 ```
 
-## Structure
+## Project Structure
 
-- `src/routes/`: File-based application routes (TanStack Router)
-- `src/components/site/`: Shared layout, motion, and navigation components
-- `src/components/home/`: Landing page sections and interactive diagrams
-- `src/content/site.ts`: Central data source for site copy, publications, and records
-- `src/styles.css`: Global styles, CSS variables, and design tokens
+- `src/routes/` — File-based route definitions
+- `src/components/` — UI components, sections, and motion primitives
+- `src/content/site.ts` — Single source of truth for site copy and records
+- `src/lib/` — Shared utilities and server handlers
+- `public/` — Static assets, icons, and metadata

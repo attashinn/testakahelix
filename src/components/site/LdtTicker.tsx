@@ -7,7 +7,7 @@ import { Marquee } from "./motion";
 export function LdtTicker({ tone = "paper" }: { tone?: "paper" | "blue" }) {
   const dim = tone === "blue" ? "text-on-blue-muted" : "text-muted-foreground";
   return (
-    <div className={cn("py-5 w-full max-w-full overflow-hidden [isolation:isolate]", tone === "blue" ? "border-y border-on-blue-line" : "border-y border-border")}>
+    <div className={cn("py-5", tone === "blue" ? "border-y border-on-blue-line" : "border-y border-border")}>
       <Marquee duration={90}>
         {ldts.map((l) => (
           <span key={l.project} className="label-mono flex items-center gap-3 whitespace-nowrap px-6">

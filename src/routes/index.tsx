@@ -34,7 +34,12 @@ export const Route = createFileRoute("/")({
         content: "Lab set-up, LDT validation and inspection readiness for molecular genetics, cytogenetics and oncology.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "/og-image.png" },
+      { property: "og:image:width", content: "1717" },
+      { property: "og:image:height", content: "916" },
+      { property: "og:image:alt", content: "AKAHELIX — LDT Validation & Clinical Command" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "/og-image.png" },
     ],
   }),
   component: Index,
@@ -140,12 +145,12 @@ function Focus() {
         title="Three things, done by someone who has done them under inspection."
         body="Lab set-up, test validation, and the teaching behind both. Each one draws on the same record: fourteen tests through New York State review and five years on CAP inspection teams."
       />
-      <div className="grid w-full max-w-full gap-3 md:grid-cols-3">
+      <div className="grid gap-3 md:grid-cols-3">
         {pillars.map((p, i) => {
           const img = focusImages[i]!;
           return (
-            <FadeUp key={p.n} delay={i * 0.1} className="w-full max-w-full min-w-0">
-              <Link to={p.to} className="group chamfer flex h-full w-full max-w-full flex-col overflow-hidden bg-mist">
+            <FadeUp key={p.n} delay={i * 0.1}>
+              <Link to={p.to} className="group chamfer flex h-full flex-col bg-mist">
                 <div className="flex items-start justify-between p-6">
                   <h3 className="max-w-[12ch] text-[1.625rem] leading-[1.05] tracking-[-0.04em]">{p.title}</h3>
                   <span className="label-mono pr-8 text-muted-foreground">{p.n}</span>
@@ -155,7 +160,7 @@ function Focus() {
                     src={img.src}
                     alt={img.alt}
                     loading="lazy"
-                    className={cn("h-full w-full transition-transform duration-[1.4s] ease-out-expo md:group-hover:scale-105", img.fit)}
+                    className={cn("h-full w-full transition-transform duration-[1.4s] ease-out-expo group-hover:scale-105", img.fit)}
                   />
                 </div>
                 <div className="relative mt-6 flex flex-1 flex-col justify-between gap-8 overflow-hidden p-6">

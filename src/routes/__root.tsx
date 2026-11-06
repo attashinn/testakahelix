@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
   type ErrorComponentProps,
@@ -11,6 +12,7 @@ import {
 import { MotionConfig } from "motion/react";
 import { useEffect, type ReactNode } from "react";
 
+import { AssistantWidget } from "@/components/assistant/AssistantWidget";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
 import { SmoothScroll } from "@/components/site/SmoothScroll";
@@ -78,7 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "AKAHELIX — Genetics laboratory set-up and validation" },
       {
         name: "description",
@@ -88,8 +90,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "AKAHELIX INC." },
       { property: "og:site_name", content: "AKAHELIX" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "/og-image.png" },
+      { property: "og:image:secure_url", content: "/og-image.png" },
+      { property: "og:image:type", content: "image/png" },
+      { property: "og:image:width", content: "1717" },
+      { property: "og:image:height", content: "916" },
+      { property: "og:image:alt", content: "AKAHELIX — LDT Validation & Clinical Command" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "theme-color", content: "#0c1524" },
+      { name: "twitter:image", content: "/og-image.png" },
+      { name: "twitter:image:alt", content: "AKAHELIX — LDT Validation & Clinical Command" },
+      { name: "theme-color", content: "#1946f7" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -117,16 +127,14 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className="overflow-x-clip w-full max-w-full overscroll-x-none [touch-action:pan-y]">
-        <div className="relative w-full max-w-full overflow-x-clip min-h-screen">
-          <div className="intro-curtain" aria-hidden>
-            <div className="intro-word font-sans text-[clamp(2.5rem,9vw,7rem)] font-medium leading-none tracking-[-0.06em]">
-              <span>AKAHELIX</span>
-            </div>
-            <div className="intro-count label-mono text-on-blue-muted">Laboratory genetics · Est. 2026</div>
+      <body>
+        <div className="intro-curtain" aria-hidden>
+          <div className="intro-word font-sans text-[clamp(2.5rem,9vw,7rem)] font-medium leading-none tracking-[-0.06em]">
+            <span>AKAHELIX</span>
           </div>
-          {children}
+          <div className="intro-count label-mono text-on-blue-muted">Laboratory genetics · Est. 2026</div>
         </div>
+        {children}
         <Scripts />
       </body>
     </html>
@@ -135,31 +143,20 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-
-  useEffect(() => {
-    // Disable iOS Safari pinch-to-zoom and gesture zooming
-    const preventGesture = (e: Event) => e.preventDefault();
-    document.addEventListener("gesturestart", preventGesture);
-    document.addEventListener("gesturechange", preventGesture);
-    document.addEventListener("gestureend", preventGesture);
-
-    return () => {
-      document.removeEventListener("gesturestart", preventGesture);
-      document.removeEventListener("gesturechange", preventGesture);
-      document.removeEventListener("gestureend", preventGesture);
-    };
-  }, []);
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isPortal = pathname.startsWith("/admin") || pathname.startsWith("/admin_panel");
 
   return (
     <QueryClientProvider client={queryClient}>
       <MotionConfig reducedMotion="user">
         <SmoothScroll />
-        <Header />
-        <main className="overflow-x-clip w-full max-w-full">
+        {!isPortal && <Header />}
+        <main>
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
           <Outlet />
         </main>
-        <Footer />
+        {!isPortal && <Footer />}
+        {!isPortal && <AssistantWidget />}
       </MotionConfig>
     </QueryClientProvider>
   );

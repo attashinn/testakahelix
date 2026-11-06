@@ -15,7 +15,7 @@ export function ProcessStrand() {
   const x = useTransform(scrollYProgress, [0, 1], ["2%", "-4%"]);
 
   return (
-    <section ref={ref} className="surface-blue relative w-full max-w-full overflow-hidden pt-24 md:pt-36 [isolation:isolate]">
+    <section ref={ref} className="surface-blue relative overflow-hidden pt-24 md:pt-36">
       <div className="container-x">
         <SectionHead
           n="04"
@@ -74,17 +74,15 @@ export function ProcessStrand() {
         ))}
       </ol>
 
-      <div className="relative w-full max-w-full overflow-hidden [isolation:isolate]">
-        <motion.img
-          src={strand}
-          alt="A long DNA strand, standing for the five phases of an engagement"
-          width={1920}
-          height={960}
-          loading="lazy"
-          style={{ x }}
-          className="relative -mt-4 block w-full max-w-full object-cover md:-mt-[25vw] md:w-[108%] md:max-w-none"
-        />
-      </div>
+      <motion.img
+        src={strand}
+        alt="A long DNA strand, standing for the five phases of an engagement"
+        width={1920}
+        height={960}
+        loading="lazy"
+        style={{ x }}
+        className="relative -mt-4 block w-[112%] max-w-none md:-mt-[25vw] md:w-[108%]"
+      />
     </section>
   );
 }

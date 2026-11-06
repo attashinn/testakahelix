@@ -10,16 +10,31 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as Admin_panelRouteImport } from './routes/admin_panel'
 import { Route as ApproachRouteImport } from './routes/approach'
 import { Route as BookRouteImport } from './routes/book'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FounderRouteImport } from './routes/founder'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as SignInRouteImport } from './routes/sign-in'
 import { Route as TrackRecordRouteImport } from './routes/track-record'
+import { Route as ApiChatRouteImport } from './routes/api/chat'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Admin_panelRoute = Admin_panelRouteImport.update({
+  id: '/admin_panel',
+  path: '/admin_panel',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApproachRoute = ApproachRouteImport.update({
@@ -42,9 +57,19 @@ const FounderRoute = FounderRouteImport.update({
   path: '/founder',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignInRoute = SignInRouteImport.update({
+  id: '/sign-in',
+  path: '/sign-in',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TrackRecordRoute = TrackRecordRouteImport.update({
@@ -52,73 +77,113 @@ const TrackRecordRoute = TrackRecordRouteImport.update({
   path: '/track-record',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiChatRoute = ApiChatRouteImport.update({
+  id: '/api/chat',
+  path: '/api/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/admin_panel': typeof Admin_panelRoute
   '/approach': typeof ApproachRoute
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/founder': typeof FounderRoute
+  '/login': typeof LoginRoute
   '/services': typeof ServicesRoute
+  '/sign-in': typeof SignInRoute
   '/track-record': typeof TrackRecordRoute
+  '/api/chat': typeof ApiChatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/admin_panel': typeof Admin_panelRoute
   '/approach': typeof ApproachRoute
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/founder': typeof FounderRoute
+  '/login': typeof LoginRoute
   '/services': typeof ServicesRoute
+  '/sign-in': typeof SignInRoute
   '/track-record': typeof TrackRecordRoute
+  '/api/chat': typeof ApiChatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/admin_panel': typeof Admin_panelRoute
   '/approach': typeof ApproachRoute
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/founder': typeof FounderRoute
+  '/login': typeof LoginRoute
   '/services': typeof ServicesRoute
+  '/sign-in': typeof SignInRoute
   '/track-record': typeof TrackRecordRoute
+  '/api/chat': typeof ApiChatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/admin'
+    | '/admin_panel'
     | '/approach'
     | '/book'
     | '/contact'
     | '/founder'
+    | '/login'
     | '/services'
+    | '/sign-in'
     | '/track-record'
+    | '/api/chat'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/admin'
+    | '/admin_panel'
     | '/approach'
     | '/book'
     | '/contact'
     | '/founder'
+    | '/login'
     | '/services'
+    | '/sign-in'
     | '/track-record'
+    | '/api/chat'
   id:
     | '__root__'
     | '/'
+    | '/admin'
+    | '/admin_panel'
     | '/approach'
     | '/book'
     | '/contact'
     | '/founder'
+    | '/login'
     | '/services'
+    | '/sign-in'
     | '/track-record'
+    | '/api/chat'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
+  Admin_panelRoute: typeof Admin_panelRoute
   ApproachRoute: typeof ApproachRoute
   BookRoute: typeof BookRoute
   ContactRoute: typeof ContactRoute
   FounderRoute: typeof FounderRoute
+  LoginRoute: typeof LoginRoute
   ServicesRoute: typeof ServicesRoute
+  SignInRoute: typeof SignInRoute
   TrackRecordRoute: typeof TrackRecordRoute
+  ApiChatRoute: typeof ApiChatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -128,6 +193,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin_panel': {
+      id: '/admin_panel'
+      path: '/admin_panel'
+      fullPath: '/admin_panel'
+      preLoaderRoute: typeof Admin_panelRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/approach': {
@@ -158,11 +237,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FounderRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sign-in': {
+      id: '/sign-in'
+      path: '/sign-in'
+      fullPath: '/sign-in'
+      preLoaderRoute: typeof SignInRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/track-record': {
@@ -172,17 +265,29 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TrackRecordRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/chat': {
+      id: '/api/chat'
+      path: '/api/chat'
+      fullPath: '/api/chat'
+      preLoaderRoute: typeof ApiChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
+  Admin_panelRoute: Admin_panelRoute,
   ApproachRoute: ApproachRoute,
   BookRoute: BookRoute,
   ContactRoute: ContactRoute,
   FounderRoute: FounderRoute,
+  LoginRoute: LoginRoute,
   ServicesRoute: ServicesRoute,
+  SignInRoute: SignInRoute,
   TrackRecordRoute: TrackRecordRoute,
+  ApiChatRoute: ApiChatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

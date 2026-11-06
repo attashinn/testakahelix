@@ -26,11 +26,7 @@ export function Header() {
   useEffect(() => setOpen(false), [pathname]);
 
   useEffect(() => {
-    if (open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.documentElement.style.overflow = open ? "hidden" : "";
   }, [open]);
 
   return (
@@ -68,7 +64,13 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex items-center gap-2">
+            <Link
+              to="/sign-in"
+              className="rounded-[3px] border border-border px-3.5 py-2 text-[0.8125rem] font-medium text-foreground transition-colors hover:bg-mist"
+            >
+              Sign In
+            </Link>
             <Cta to="/contact" variant="outline" size="md" className="h-10 pl-4 pr-1 text-[0.8125rem] [&>span:last-child]:size-8">
               Contact us
             </Cta>
@@ -99,7 +101,7 @@ export function Header() {
             transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
           >
             <nav className="flex flex-col" aria-label="Mobile">
-              {[{ to: "/" as const, label: "Home" }, ...nav, { to: "/contact" as const, label: "Contact" }].map(
+              {[{ to: "/" as const, label: "Home" }, ...nav, { to: "/contact" as const, label: "Contact" }, { to: "/sign-in" as const, label: "Sign in" }].map(
                 (item, i) => (
                   <div key={item.to} className="overflow-hidden border-b border-on-blue-line">
                     <motion.div

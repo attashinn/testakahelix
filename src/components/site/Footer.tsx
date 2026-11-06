@@ -80,6 +80,11 @@ export function Footer() {
                   Contact
                 </Link>
               </li>
+              <li>
+                <Link to="/sign-in" className="link-draw text-muted-foreground/75 hover:text-blue">
+                  Client portal
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="col-span-6 md:col-span-2">
@@ -111,8 +116,8 @@ export function Footer() {
           whileInView={{ y: "0%" }}
           viewport={{ once: true }}
           transition={{ duration: 1.6, ease: EASE }}
-          className="select-none whitespace-nowrap text-center font-sans font-medium leading-[0.78] tracking-[-0.06em] text-mist-deep truncate max-w-full"
-          style={{ fontSize: "clamp(3rem, 16vw, 19rem)" }}
+          className="select-none whitespace-nowrap text-center font-sans font-medium leading-[0.78] tracking-[-0.06em] text-mist-deep"
+          style={{ fontSize: "clamp(4rem, 19.5vw, 19rem)" }}
           aria-hidden
         >
           AKAHELIX

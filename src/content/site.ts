@@ -477,3 +477,21 @@ export const book = {
   provenance:
     "A fellow revising from a borrowed set of notes is entitled to know whether whoever wrote them has signed out the report, sat on the inspection team, argued the variant before an expert panel and paid for the reagents.",
 };
+
+// Help desk widget (bottom-right on every page).
+export const assistant = {
+  greeting: "Hello.",
+  question: "How can we help with your laboratory?",
+  suggestions: [
+    "Can you help us bring a send-out test in-house?",
+    "What does a New York State LDT submission involve?",
+    "Can you help with just one test?",
+    "Will you act as our laboratory director?",
+  ],
+  updates: [
+    { tag: "Book", date: "2026", title: "Genetic Blueprint: Bench to Bed, first edition", body: "An integrated review of medical laboratory genetics, written to the ABMGG blueprints.", to: "/book" as const },
+    { tag: "Approval", date: "2026", title: "NGS transplant donor chimerism approved by NYSDOH", body: "LDT 104445. 270 validation samples, detection down to 0.1% recipient DNA.", to: "/track-record" as const },
+    { tag: "Standard", date: "2025", title: "CLSI NBS13 published", body: "Newborn Screening for Spinal Muscular Atrophy, first edition. Dr. Azad is a contributing author.", to: "/founder" as const },
+    { tag: "Resource", date: "2026", title: "Cancer Genomics Consortium Geneticist Toolkit", body: "Workgroup member for the national toolkit for clinical laboratory geneticists.", to: "/track-record" as const },
+  ],
+};
