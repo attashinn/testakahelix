@@ -117,8 +117,8 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className="overflow-x-hidden w-full max-w-full overscroll-x-none [touch-action:pan-y]">
-        <div className="relative w-full max-w-full overflow-x-hidden min-h-screen">
+      <body className="overflow-x-clip w-full max-w-full overscroll-x-none [touch-action:pan-y]">
+        <div className="relative w-full max-w-full overflow-x-clip min-h-screen">
           <div className="intro-curtain" aria-hidden>
             <div className="intro-word font-sans text-[clamp(2.5rem,9vw,7rem)] font-medium leading-none tracking-[-0.06em]">
               <span>AKAHELIX</span>
