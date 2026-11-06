@@ -31,7 +31,7 @@ export function Hero() {
             width={1920}
             height={1088}
             style={{ y, scale }}
-            className="h-full w-full object-cover object-[72%_center] md:object-center"
+            className="h-full w-full object-cover object-[72%_center] md:object-center transform-gpu will-change-transform"
           />
         </div>
 

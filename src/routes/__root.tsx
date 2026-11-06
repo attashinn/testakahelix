@@ -80,7 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" },
       { title: "AKAHELIX — Genetics laboratory set-up and validation" },
       {
         name: "description",
@@ -127,14 +127,16 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>
-        <div className="intro-curtain" aria-hidden>
-          <div className="intro-word font-sans text-[clamp(2.5rem,9vw,7rem)] font-medium leading-none tracking-[-0.06em]">
-            <span>AKAHELIX</span>
+      <body className="overflow-x-clip w-full max-w-full overscroll-x-none [touch-action:pan-y]">
+        <div className="relative w-full max-w-full overflow-x-clip min-h-screen">
+          <div className="intro-curtain" aria-hidden>
+            <div className="intro-word font-sans text-[clamp(2.5rem,9vw,7rem)] font-medium leading-none tracking-[-0.06em]">
+              <span>AKAHELIX</span>
+            </div>
+            <div className="intro-count label-mono text-on-blue-muted">Laboratory genetics · Est. 2026</div>
           </div>
-          <div className="intro-count label-mono text-on-blue-muted">Laboratory genetics · Est. 2026</div>
+          {children}
         </div>
-        {children}
         <Scripts />
       </body>
     </html>
@@ -146,12 +148,26 @@ function RootComponent() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const isPortal = pathname.startsWith("/admin") || pathname.startsWith("/admin_panel");
 
+  useEffect(() => {
+    // Disable iOS Safari pinch-to-zoom and gesture zooming
+    const preventGesture = (e: Event) => e.preventDefault();
+    document.addEventListener("gesturestart", preventGesture);
+    document.addEventListener("gesturechange", preventGesture);
+    document.addEventListener("gestureend", preventGesture);
+
+    return () => {
+      document.removeEventListener("gesturestart", preventGesture);
+      document.removeEventListener("gesturechange", preventGesture);
+      document.removeEventListener("gestureend", preventGesture);
+    };
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <MotionConfig reducedMotion="user">
         <SmoothScroll />
         {!isPortal && <Header />}
-        <main>
+        <main className="overflow-x-clip w-full max-w-full">
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
           <Outlet />
         </main>

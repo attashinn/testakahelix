@@ -1,7 +1,7 @@
 import { List, X } from "@phosphor-icons/react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { company, nav } from "@/content/site";
 import { cn } from "@/lib/utils";
@@ -16,29 +16,45 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const lastScrollY = useRef(0);
 
   useMotionValueEvent(scrollY, "change", (v) => {
-    const prev = scrollY.getPrevious() ?? 0;
-    setScrolled(v > 24);
-    setHidden(v > 320 && v > prev && !open);
+    const prev = lastScrollY.current;
+    const diff = v - prev;
+
+    if (v <= 24) {
+      setScrolled(false);
+      setHidden(false);
+      lastScrollY.current = v;
+    } else {
+      setScrolled(true);
+      if (v > 320 && Math.abs(diff) > 12) {
+        setHidden(diff > 0 && !open);
+        lastScrollY.current = v;
+      }
+    }
   });
 
   useEffect(() => setOpen(false), [pathname]);
 
   useEffect(() => {
-    document.documentElement.style.overflow = open ? "hidden" : "";
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
   }, [open]);
 
   return (
     <>
       <motion.header
         className={cn(
-          "fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500",
+          "fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500 transform-gpu will-change-transform",
           open ? "border-transparent bg-transparent" : "bg-background",
           scrolled && !open ? "border-border" : "border-transparent",
         )}
         animate={{ y: hidden ? "-100%" : "0%" }}
-        transition={{ duration: 0.6, ease: EASE }}
+        transition={{ duration: 0.5, ease: EASE }}
       >
         <div className={cn("container-x pt-2 transition-opacity", open && "opacity-0")} aria-hidden>
           <div className="ticks text-foreground" />

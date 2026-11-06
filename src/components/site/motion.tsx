@@ -46,9 +46,13 @@ export function RevealText({
     : { initial: "hidden", whileInView: "show", viewport: { once: true, margin: "0px 0px -12% 0px" } };
 
   return (
-    <Tag className={className} {...trigger} aria-label={text}>
+    <Tag className={cn("break-words", className)} {...trigger} aria-label={text}>
       {words.map((w, i) => (
-        <span key={i} aria-hidden className="inline-block overflow-hidden pb-[0.12em] -mb-[0.12em] align-top">
+        <span
+          key={i}
+          aria-hidden
+          className="inline-block overflow-hidden pb-[0.12em] -mb-[0.12em] align-top mr-[0.28em] last:mr-0"
+        >
           <motion.span
             className="inline-block will-change-transform"
             variants={{
@@ -57,7 +61,6 @@ export function RevealText({
             }}
           >
             {w}
-            {i < words.length - 1 ? "\u00A0" : ""}
           </motion.span>
         </span>
       ))}
@@ -141,8 +144,9 @@ export function ImageReveal({
         width={width}
         height={height}
         loading={priority ? "eager" : "lazy"}
+        decoding="async"
         style={reduce ? {} : { y, scale: 1 + parallax / 50 }}
-        className={cn("h-full w-full object-cover", imgClassName)}
+        className={cn("h-full w-full object-cover transform-gpu will-change-transform", imgClassName)}
       />
     </motion.div>
   );
@@ -175,9 +179,8 @@ function FillWord({
 }) {
   const opacity = useTransform(progress, range, [0.18, 1]);
   return (
-    <span aria-hidden className={cn("relative inline-block", muted)}>
-      <motion.span style={{ opacity }}>{word}</motion.span>
-      {"\u00A0"}
+    <span aria-hidden className={cn("relative inline-block mr-[0.28em] last:mr-0", muted)}>
+      <motion.span style={{ opacity }} className="will-change-[opacity]">{word}</motion.span>
     </span>
   );
 }

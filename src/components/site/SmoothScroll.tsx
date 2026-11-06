@@ -2,28 +2,29 @@ import { useRouterState } from "@tanstack/react-router";
 import { useEffect, useRef } from "react";
 import type Lenis from "lenis";
 
-/** Weighted smooth scrolling (Lenis). Skipped when the user prefers reduced motion. */
+/** Responsive smooth scrolling (Lenis). Skipped when the user prefers reduced motion. */
 export function SmoothScroll() {
   const lenisRef = useRef<Lenis | null>(null);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    let raf = 0;
+    if ("ontouchstart" in window || navigator.maxTouchPoints > 0) return;
     let cancelled = false;
     import("lenis").then(({ default: LenisCtor }) => {
       if (cancelled) return;
-      const lenis = new LenisCtor({ duration: 1.15, easing: (t) => 1 - Math.pow(1 - t, 4) });
+      const lenis = new LenisCtor({
+        lerp: 0.1,
+        smoothWheel: true,
+        syncTouch: false,
+        wheelMultiplier: 1.0,
+        touchMultiplier: 1.0,
+        autoRaf: true,
+      });
       lenisRef.current = lenis;
-      const loop = (time: number) => {
-        lenis.raf(time);
-        raf = requestAnimationFrame(loop);
-      };
-      raf = requestAnimationFrame(loop);
     });
     return () => {
       cancelled = true;
-      cancelAnimationFrame(raf);
       lenisRef.current?.destroy();
       lenisRef.current = null;
     };

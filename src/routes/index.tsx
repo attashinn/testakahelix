@@ -145,12 +145,12 @@ function Focus() {
         title="Three things, done by someone who has done them under inspection."
         body="Lab set-up, test validation, and the teaching behind both. Each one draws on the same record: fourteen tests through New York State review and five years on CAP inspection teams."
       />
-      <div className="grid gap-3 md:grid-cols-3">
+      <div className="grid w-full max-w-full gap-3 md:grid-cols-3">
         {pillars.map((p, i) => {
           const img = focusImages[i]!;
           return (
-            <FadeUp key={p.n} delay={i * 0.1}>
-              <Link to={p.to} className="group chamfer flex h-full flex-col bg-mist">
+            <FadeUp key={p.n} delay={i * 0.1} className="w-full max-w-full min-w-0">
+              <Link to={p.to} className="group chamfer flex h-full w-full max-w-full flex-col overflow-hidden bg-mist">
                 <div className="flex items-start justify-between p-6">
                   <h3 className="max-w-[12ch] text-[1.625rem] leading-[1.05] tracking-[-0.04em]">{p.title}</h3>
                   <span className="label-mono pr-8 text-muted-foreground">{p.n}</span>
@@ -160,7 +160,8 @@ function Focus() {
                     src={img.src}
                     alt={img.alt}
                     loading="lazy"
-                    className={cn("h-full w-full transition-transform duration-[1.4s] ease-out-expo group-hover:scale-105", img.fit)}
+                    decoding="async"
+                    className={cn("h-full w-full transition-transform duration-[1.4s] ease-out-expo group-hover:scale-105 transform-gpu", img.fit)}
                   />
                 </div>
                 <div className="relative mt-6 flex flex-1 flex-col justify-between gap-8 overflow-hidden p-6">
@@ -383,7 +384,8 @@ function Founder() {
                   src={portrait}
                   alt="Portrait of Dr. Abul Kalam Azad"
                   loading="lazy"
-                  className="h-full w-full object-cover object-[58%_center] grayscale transition-[filter,transform] duration-[1.2s] ease-out-expo group-hover:scale-[1.03] group-hover:grayscale-0"
+                  decoding="async"
+                  className="h-full w-full object-cover object-[58%_center] grayscale transition-[filter,transform] duration-[1.2s] ease-out-expo group-hover:scale-[1.03] group-hover:grayscale-0 transform-gpu"
                 />
               </div>
               <div className="flex items-end justify-between p-6">

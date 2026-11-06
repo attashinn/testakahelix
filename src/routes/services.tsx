@@ -87,7 +87,9 @@ function ServicesPage() {
                       <img
                         src={serviceVisuals[i]!.src}
                         alt={serviceVisuals[i]!.alt}
-                        className="w-full object-cover aspect-[16/10] transition-transform duration-700 ease-out-expo group-hover:scale-[1.02]"
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full object-cover aspect-[16/10] transition-transform duration-700 ease-out-expo group-hover:scale-[1.02] transform-gpu"
                       />
                       <p className="label-mono border-t border-border bg-mist/30 px-3 py-2 text-[0.6875rem] text-muted-foreground">
                         {serviceVisuals[i]!.caption}

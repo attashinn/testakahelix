@@ -44,7 +44,7 @@ export function AssistantWidget() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: EASE, delay: 2.4 }}
         className={cn(
-          "fixed bottom-4 right-4 z-[60] flex h-14 items-center gap-3 rounded-[6px] bg-blue p-2 text-on-blue shadow-[var(--shadow-panel)] transition-colors hover:bg-blue-deep md:bottom-6 md:right-6",
+          "fixed bottom-4 right-4 z-[60] flex h-14 items-center gap-3 rounded-[6px] bg-blue p-2 text-on-blue shadow-[var(--shadow-panel)] transition-colors hover:bg-blue-deep md:bottom-6 md:right-6 transform-gpu",
           open ? "w-14 justify-center" : "md:pr-5",
         )}
       >

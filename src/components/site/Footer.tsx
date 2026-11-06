@@ -25,7 +25,7 @@ function ClosingPanel() {
           height={960}
           loading="lazy"
           style={{ scale }}
-          className="absolute inset-0 h-full w-full object-cover [mask-image:radial-gradient(ellipse_38%_64%_at_center,transparent_62%,black_100%)]"
+          className="absolute inset-0 h-full w-full object-cover [mask-image:radial-gradient(ellipse_38%_64%_at_center,transparent_62%,black_100%)] transform-gpu will-change-transform"
         />
         <div className="relative flex min-h-[30rem] flex-col items-center justify-center px-6 py-24 text-center md:min-h-[36rem]">
           <p className="label-mono mb-6 text-on-blue-muted">Start here</p>
@@ -116,8 +116,8 @@ export function Footer() {
           whileInView={{ y: "0%" }}
           viewport={{ once: true }}
           transition={{ duration: 1.6, ease: EASE }}
-          className="select-none whitespace-nowrap text-center font-sans font-medium leading-[0.78] tracking-[-0.06em] text-mist-deep"
-          style={{ fontSize: "clamp(4rem, 19.5vw, 19rem)" }}
+          className="select-none whitespace-nowrap text-center font-sans font-medium leading-[0.78] tracking-[-0.06em] text-mist-deep truncate max-w-full"
+          style={{ fontSize: "clamp(3rem, 16vw, 19rem)" }}
           aria-hidden
         >
           AKAHELIX

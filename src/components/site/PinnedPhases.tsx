@@ -13,7 +13,8 @@ export function PinnedPhases() {
   const [active, setActive] = useState(0);
 
   useMotionValueEvent(scrollYProgress, "change", (v) => {
-    setActive(Math.min(phases.length - 1, Math.max(0, Math.floor(v * phases.length))));
+    const next = Math.min(phases.length - 1, Math.max(0, Math.floor(v * phases.length)));
+    setActive((prev) => (prev !== next ? next : prev));
   });
 
   const p = phases[active] ?? phases[0]!;
