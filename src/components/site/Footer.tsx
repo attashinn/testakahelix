@@ -88,7 +88,7 @@ export function Footer() {
             </ul>
           </div>
           <div className="col-span-6 md:col-span-2">
-            <p className="label-mono mb-4 text-muted-foreground">Founder record</p>
+            <p className="label-mono mb-4 text-muted-foreground">Leadership record</p>
             <ul className="space-y-2.5 text-[0.9375rem]">
               {profiles.map((p) => (
                 <li key={p.href}>

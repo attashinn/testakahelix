@@ -1,24 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import portrait from "@/assets/azad-portrait.jpg";
+import rafulAlamPortrait from "@/assets/raful-alam.jpg";
 import { Cta, TextLink } from "@/components/site/Cta";
 import { FadeUp, ImageReveal, RevealText, introDelay } from "@/components/site/motion";
-import { SectionLabel } from "@/components/site/Section";
-import { book, credentials, profiles, route, teaching } from "@/content/site";
+import { Chip, SectionLabel } from "@/components/site/Section";
+import { alamCredentials, alamRoute, book, credentials, profiles, route, teaching } from "@/content/site";
 
 export const Route = createFileRoute("/founder")({
   head: () => ({
     meta: [
-      { title: "Dr. Abul Kalam Azad, MD, MSc, PhD — Founder · AKAHELIX" },
+      { title: "Leadership & Co-Owners — Dr. Abul Kalam Azad & Dr. Rauful Alam · AKAHELIX" },
       {
         name: "description",
         content:
-          "Laboratory geneticist, molecular pathology laboratory director, CAP inspector since 2020 and NYS-qualified technical director in cytogenetics, genetic testing and molecular oncology.",
+          "AKAHELIX is co-owned and directed by Dr. Abul Kalam Azad (MD, MSc, PhD, Laboratory Director & CAP Inspector) and Dr. Rauful Alam (PhD, Principal Scientist & Organic Chemist, RNA Splicing & CNS Targets).",
       },
-      { property: "og:title", content: "Dr. Abul Kalam Azad — Founder of AKAHELIX" },
+      { property: "og:title", content: "Leadership & Co-Owners — AKAHELIX" },
       {
         property: "og:description",
-        content: "Trained and worked across five continents, from Dhaka and Bangkok to Leuven, Toronto, Houston and New York.",
+        content: "Practising scientists spanning clinical molecular genetics, CAP inspection, and RNA translational chemistry.",
       },
       { property: "og:type", content: "profile" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -30,17 +31,34 @@ export const Route = createFileRoute("/founder")({
 function FounderPage() {
   return (
     <>
-      <section className="container-x pb-20 pt-32 md:pb-32 md:pt-44">
+      {/* Header intro */}
+      <section className="container-x pb-12 pt-32 md:pb-20 md:pt-44">
+        <FadeUp onMount delay={introDelay(0)} y={10}>
+          <Chip className="mb-6">Executive Leadership & Co-Owners</Chip>
+        </FadeUp>
+        <RevealText as="h1" onMount delay={introDelay(0.05)} text="The scientists behind every build." className="display-xl max-w-[14ch]" />
+        <FadeUp onMount delay={introDelay(0.35)}>
+          <p className="lede mt-8 max-w-[44ch] text-muted-foreground">
+            AKAHELIX is co-owned and guided by practising scientists whose careers bridge clinical molecular diagnostics, CAP laboratory inspection, and cutting-edge RNA and medicinal chemistry.
+          </p>
+        </FadeUp>
+      </section>
+
+      {/* 01: Dr. Abul Kalam Azad */}
+      <section className="container-x border-t border-border py-20 md:py-32">
         <div className="grid-12 gap-y-12">
           <div className="col-span-12 md:col-span-7">
-            <FadeUp onMount delay={introDelay(0)} y={10}>
-              <p className="label-mono mb-8 text-muted-foreground">Founder & CEO</p>
+            <FadeUp y={10}>
+              <div className="flex items-center gap-3">
+                <span className="label-mono text-blue">01 / 02</span>
+                <span className="label-mono text-muted-foreground">Co-Founder & CEO</span>
+              </div>
             </FadeUp>
-            <RevealText as="h1" onMount delay={introDelay(0.05)} text="Abul Kalam Azad" className="display-xl max-w-[9ch]" />
-            <FadeUp onMount delay={introDelay(0.4)}>
-              <p className="label-mono mt-6 text-muted-foreground">MD, MSc, PhD · Port Chester & Bronx, New York</p>
+            <h2 className="display-lg mt-4 max-w-[10ch]">Dr. Abul Kalam Azad</h2>
+            <FadeUp delay={0.1}>
+              <p className="label-mono mt-4 text-muted-foreground">MD, MSc, PhD · Laboratory Director & CAP Inspector · New York</p>
             </FadeUp>
-            <FadeUp onMount delay={introDelay(0.5)} className="mt-12 max-w-[56ch] space-y-5 text-[1.0625rem] leading-relaxed">
+            <FadeUp delay={0.2} className="mt-10 max-w-[56ch] space-y-5 text-[1.0625rem] leading-relaxed">
               <p>
                 Laboratory geneticist and molecular pathology laboratory director at a New York academic medical
                 center, and Assistant Professor of Pathology at Albert Einstein College of Medicine. He develops and
@@ -50,10 +68,16 @@ function FounderPage() {
               <p className="text-muted-foreground">
                 His research spans somatic and germline variation, molecular pathogenesis and cancer genomics. He curates
                 variants and genes for NIH ClinVar and ClinGen and for the Leiden Open Variation Database, reviews for
-                eight journals, inspects laboratories for the College of American Pathologists, and teaches medical
+                eight journals, inspects laboratories for the College of American Pathologists (CAP), and teaches medical
                 students, residents and fellows.
               </p>
             </FadeUp>
+
+            <div className="mt-8">
+              <TextLink href="https://www.linkedin.com/in/abul-kalam-azad-75496362/">
+                Connect with Dr. Azad on LinkedIn
+              </TextLink>
+            </div>
           </div>
           <div className="col-span-12 md:col-span-5">
             <ImageReveal
@@ -64,49 +88,41 @@ function FounderPage() {
               priority
               parallax={5}
               delay={introDelay(0.2)}
-              className="aspect-[4/5] md:mt-20"
+              className="aspect-[4/5]"
               imgClassName="object-[58%_center] grayscale transition-[filter] duration-1000 hover:grayscale-0"
             />
-            <p className="label-mono mt-3 text-muted-foreground">Bronx, New York</p>
+            <p className="label-mono mt-3 text-muted-foreground">Port Chester & Bronx, New York</p>
           </div>
         </div>
-      </section>
 
-      <section className="container-x pb-24 md:pb-36">
-        <SectionLabel n="01">Credentials</SectionLabel>
-        <dl className="grid gap-x-12 md:grid-cols-2">
-          {credentials.map((c, i) => (
-            <FadeUp key={c.k} delay={(i % 2) * 0.06}>
-              <div className="border-b border-border py-7">
-                <dt className="label-mono text-muted-foreground">{c.k}</dt>
-                <dd className="mt-3 font-display text-xl leading-snug tracking-tight md:text-[1.4rem]">{c.v}</dd>
-              </div>
-            </FadeUp>
-          ))}
-        </dl>
-      </section>
+        {/* Dr. Azad Credentials */}
+        <div className="mt-16 border-t border-border pt-12">
+          <p className="label-mono mb-8 text-muted-foreground">Dr. Azad · Qualifications & Appointments</p>
+          <dl className="grid gap-x-12 md:grid-cols-2">
+            {credentials.map((c, i) => (
+              <FadeUp key={c.k} delay={(i % 2) * 0.05}>
+                <div className="border-b border-border py-6">
+                  <dt className="label-mono text-muted-foreground">{c.k}</dt>
+                  <dd className="mt-2.5 font-display text-xl leading-snug tracking-tight md:text-[1.3rem]">{c.v}</dd>
+                </div>
+              </FadeUp>
+            ))}
+          </dl>
+        </div>
 
-      <section className="surface-blue py-24 md:py-36">
-        <div className="container-x">
-          <SectionLabel n="02" tone="blue">
-            The route
-          </SectionLabel>
-          <div className="grid-12 mb-16">
-            <RevealText
-              text="Trained and worked across five continents, so labs fit their setting, in the US or abroad."
-              className="display-md col-span-12 max-w-[24ch] md:col-span-9"
-            />
-          </div>
-          <ol className="border-t border-on-blue-line">
+        {/* Dr. Azad Route */}
+        <div className="mt-16 rounded-[4px] bg-mist p-8 md:p-12">
+          <p className="label-mono mb-8 text-muted-foreground">Dr. Azad · Academic & Clinical Pathway</p>
+          <ol className="divide-y divide-border/60">
             {route.map((r, i) => (
-              <FadeUp key={r.city} delay={0.04}>
-                <li className="group grid-12 items-baseline gap-y-2 border-b border-on-blue-line py-8">
-                  <span className="label-mono col-span-2 text-on-blue-muted md:col-span-1">0{i + 1}</span>
-                  <span className="col-span-10 font-display text-[clamp(2.25rem,5vw,4.25rem)] leading-none tracking-[-0.03em] transition-transform duration-700 ease-out-expo group-hover:translate-x-3 md:col-span-4">
+              <FadeUp key={r.city} delay={i * 0.04}>
+                <li className="grid-12 items-baseline gap-y-2 py-6">
+                  <span className="label-mono col-span-2 text-muted-foreground md:col-span-1">0{i + 1}</span>
+                  <span className="col-span-10 font-display text-[clamp(1.75rem,3.5vw,2.75rem)] leading-none tracking-[-0.03em] md:col-span-4">
                     {r.city}
                   </span>
-                  <span className="label-mono col-span-12 text-on-blue-muted md:col-span-2">{r.years}</span>
-                  <span className="col-span-12 text-on-blue-muted md:col-span-5">{r.what}</span>
+                  <span className="label-mono col-span-12 text-muted-foreground md:col-span-2">{r.years}</span>
+                  <span className="col-span-12 text-muted-foreground md:col-span-5">{r.what}</span>
                 </li>
               </FadeUp>
             ))}
@@ -114,8 +130,94 @@ function FounderPage() {
         </div>
       </section>
 
-      <section className="container-x py-24 md:py-36">
-        <SectionLabel n="03">On teaching</SectionLabel>
+      {/* 02: Dr. Rauful Alam */}
+      <section className="container-x border-t border-border py-20 md:py-32">
+        <div className="grid-12 gap-y-12">
+          <div className="col-span-12 md:col-span-7">
+            <FadeUp y={10}>
+              <div className="flex items-center gap-3">
+                <span className="label-mono text-blue">02 / 02</span>
+                <span className="label-mono text-muted-foreground">Co-Owner & Principal Scientist</span>
+              </div>
+            </FadeUp>
+            <h2 className="display-lg mt-4 max-w-[10ch]">Dr. Rauful Alam</h2>
+            <FadeUp delay={0.1}>
+              <p className="label-mono mt-4 text-muted-foreground">PhD · Medicinal & Organic Chemist · New Jersey & New York</p>
+            </FadeUp>
+            <FadeUp delay={0.2} className="mt-10 max-w-[56ch] space-y-5 text-[1.0625rem] leading-relaxed">
+              <p>
+                Scientist at the crossroads of biology and chemistry, bringing a wealth of expertise in RNA splicing,
+                Central Nervous System (CNS) targets, anti-inflammatory targets, and a deep-seated affinity for synthetic
+                organic chemistry.
+              </p>
+              <p className="text-muted-foreground">
+                Dr. Alam completed his PhD in Organic Chemistry at Stockholm University, followed by postdoctoral research
+                at the University of Pennsylvania (UPenn) in the renowned Molander Group. Currently Principal Scientist at
+                PTC Therapeutics, he drives cutting-edge small-molecule modulation, translational chemistry, and assay
+                innovation.
+              </p>
+            </FadeUp>
+
+            <div className="mt-8">
+              <TextLink href="https://www.linkedin.com/in/rauful-alam-phd-12536365/">
+                Connect with Dr. Alam on LinkedIn
+              </TextLink>
+            </div>
+          </div>
+          <div className="col-span-12 md:col-span-5">
+            <ImageReveal
+              src={rafulAlamPortrait}
+              alt="Portrait of Dr. Rauful Alam"
+              width={800}
+              height={800}
+              priority
+              parallax={5}
+              delay={0.2}
+              className="aspect-[4/5]"
+              imgClassName="object-cover grayscale transition-[filter] duration-1000 hover:grayscale-0"
+            />
+            <p className="label-mono mt-3 text-muted-foreground">New Jersey & New York</p>
+          </div>
+        </div>
+
+        {/* Dr. Alam Credentials */}
+        <div className="mt-16 border-t border-border pt-12">
+          <p className="label-mono mb-8 text-muted-foreground">Dr. Alam · Specializations & Research Focus</p>
+          <dl className="grid gap-x-12 md:grid-cols-2">
+            {alamCredentials.map((c, i) => (
+              <FadeUp key={c.k} delay={(i % 2) * 0.05}>
+                <div className="border-b border-border py-6">
+                  <dt className="label-mono text-muted-foreground">{c.k}</dt>
+                  <dd className="mt-2.5 font-display text-xl leading-snug tracking-tight md:text-[1.3rem]">{c.v}</dd>
+                </div>
+              </FadeUp>
+            ))}
+          </dl>
+        </div>
+
+        {/* Dr. Alam Route */}
+        <div className="mt-16 rounded-[4px] bg-mist p-8 md:p-12">
+          <p className="label-mono mb-8 text-muted-foreground">Dr. Alam · Academic & Industry Pathway</p>
+          <ol className="divide-y divide-border/60">
+            {alamRoute.map((r, i) => (
+              <FadeUp key={r.city} delay={i * 0.04}>
+                <li className="grid-12 items-baseline gap-y-2 py-6">
+                  <span className="label-mono col-span-2 text-muted-foreground md:col-span-1">0{i + 1}</span>
+                  <span className="col-span-10 font-display text-[clamp(1.75rem,3.5vw,2.75rem)] leading-none tracking-[-0.03em] md:col-span-4">
+                    {r.city}
+                  </span>
+                  <span className="label-mono col-span-12 text-muted-foreground md:col-span-2">{r.years}</span>
+                  <span className="col-span-12 text-muted-foreground md:col-span-5">{r.what}</span>
+                </li>
+              </FadeUp>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* Principles */}
+      <section className="container-x py-24 md:py-36 border-t border-border">
+        <SectionLabel n="03">On practice & rigorous science</SectionLabel>
         <div className="grid-12 mb-16">
           <RevealText
             text="“The most rewarding part is watching a trainee move from asking what a result means to asking whether to believe it.”"
@@ -137,8 +239,9 @@ function FounderPage() {
         </div>
       </section>
 
+      {/* Public Record & Profiles */}
       <section className="container-x pb-24 md:pb-36">
-        <SectionLabel n="04">Public record</SectionLabel>
+        <SectionLabel n="04">Public record & profiles</SectionLabel>
         <div className="grid-12 gap-y-10">
           <FadeUp className="col-span-12 md:col-span-6">
             <p className="font-display text-2xl leading-snug tracking-tight md:text-3xl">“{book.provenance}”</p>
@@ -154,10 +257,13 @@ function FounderPage() {
             ))}
           </ul>
         </div>
-        <FadeUp className="mt-16">
+        <FadeUp className="mt-16 flex flex-wrap gap-4">
           <Cta to="/contact" size="lg">
-            Talk to Dr. Azad
+            Book a free scoping call
           </Cta>
+          <TextLink to="/track-record" className="text-base">
+            See the 14 NYSDOH LDT track record
+          </TextLink>
         </FadeUp>
       </section>
     </>

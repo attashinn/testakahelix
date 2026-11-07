@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 
 import portrait from "@/assets/azad-portrait.jpg";
+import rafulAlamPortrait from "@/assets/raful-alam.jpg";
 import heroHelix from "@/assets/hero-helix.jpg";
 import { Cta, TextLink } from "@/components/site/Cta";
 import { Counter, EASE, FadeUp, RevealText, introDelay } from "@/components/site/motion";
@@ -77,16 +78,25 @@ export function Hero() {
             delay={introDelay(1.2)}
             className="col-span-2 flex items-center gap-4 border-t border-on-blue-line/60 p-6 md:col-span-1 md:border-l md:border-t-0 md:p-8 lg:px-12"
           >
-            <img
-              src={portrait}
-              alt="Dr. Abul Kalam Azad"
-              width={56}
-              height={56}
-              className="size-12 shrink-0 rounded-full object-cover object-[58%_30%] grayscale"
-            />
+            <div className="flex -space-x-2.5 shrink-0">
+              <img
+                src={portrait}
+                alt="Dr. Abul Kalam Azad"
+                width={48}
+                height={48}
+                className="size-11 rounded-full border-2 border-blue object-cover object-[58%_30%] grayscale"
+              />
+              <img
+                src={rafulAlamPortrait}
+                alt="Dr. Rauful Alam"
+                width={48}
+                height={48}
+                className="size-11 rounded-full border-2 border-blue object-cover grayscale"
+              />
+            </div>
             <p className="text-[0.875rem] leading-snug">
-              CAP laboratory inspector since 2020
-              <span className="mt-1 block text-on-blue-muted">Dr. Abul Kalam Azad, founder</span>
+              Executive leadership & science
+              <span className="mt-1 block text-on-blue-muted">Dr. A. K. Azad & Dr. R. Alam, Co-Owners</span>
             </p>
           </FadeUp>
         </div>

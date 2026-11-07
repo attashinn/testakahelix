@@ -9,10 +9,13 @@ export const company = {
   email: "azadak71@proton.me",
   founder: "Dr. Abul Kalam Azad",
   founderCreds: "MD, MSc, PhD",
+  coOwner: "Dr. Rauful Alam",
+  coOwnerCreds: "PhD",
 };
 
 export const profiles = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/abul-kalam-azad-75496362/" },
+  { label: "Dr. Abul Kalam Azad · LinkedIn", href: "https://www.linkedin.com/in/abul-kalam-azad-75496362/" },
+  { label: "Dr. Rauful Alam · LinkedIn", href: "https://www.linkedin.com/in/rauful-alam-phd-12536365/" },
   {
     label: "PubMed bibliography",
     href: "https://www.ncbi.nlm.nih.gov/myncbi/abul%20kalam.azad.1/bibliography/public/",
@@ -25,7 +28,7 @@ export const nav = [
   { to: "/services", label: "Services" },
   { to: "/approach", label: "Approach" },
   { to: "/track-record", label: "Track record" },
-  { to: "/founder", label: "Founder" },
+  { to: "/founder", label: "Leadership" },
   { to: "/book", label: "Book" },
 ] as const;
 
@@ -424,6 +427,22 @@ export const route = [
   { city: "Toronto", years: "2009–2014", what: "CIHR postdoctoral fellow in cancer genetics, Princess Margaret Cancer Centre" },
   { city: "Houston", years: "2014–2017", what: "Research Scientist, MD Anderson Cancer Center" },
   { city: "New York", years: "2017–", what: "ABMGG fellowship, then Laboratory Director, Molecular Pathology, and Assistant Professor of Pathology" },
+];
+
+export const alamCredentials = [
+  { k: "Doctoral Degree", v: "PhD in Organic Chemistry, Stockholm University, Sweden (2012–2016)." },
+  { k: "Postdoctoral Fellowship", v: "University of Pennsylvania (UPenn), with Prof. Gary A. Molander (2016–2018)." },
+  { k: "Industry Leadership", v: "Principal Scientist at PTC Therapeutics, New Jersey (Translational & Medicinal Discovery)." },
+  { k: "Core Specialization", v: "RNA Splicing, Central Nervous System (CNS) Targets, Anti-inflammatory Targets." },
+  { k: "Methodological Scope", v: "Synthetic Organic Chemistry, Small-Molecule RNA Modulators, Medicinal Chemistry & Assay Optimization." },
+  { k: "Publications & Patents", v: "Author of high-impact research in leading ACS, JACS, and Wiley chemical biology journals." },
+];
+
+export const alamRoute = [
+  { city: "Chittagong", years: "–2008", what: "BSc & MSc in Chemistry, University of Chittagong" },
+  { city: "Stockholm", years: "2012–2016", what: "PhD in Organic Chemistry, Stockholm University — Catalytic & stereoselective transformations" },
+  { city: "Philadelphia", years: "2016–2018", what: "Postdoctoral Researcher, University of Pennsylvania (UPenn) — Photoredox & organoboron catalysis" },
+  { city: "New Jersey", years: "2018–", what: "Principal Scientist, PTC Therapeutics — RNA splicing modulation & CNS therapeutics" },
 ];
 
 export const teaching = [

@@ -33,6 +33,7 @@ import { Shimmer } from "@/components/ai-elements/shimmer";
 import { Mark } from "@/components/site/Wordmark";
 import { EASE } from "@/components/site/motion";
 import portrait from "@/assets/azad-portrait.jpg";
+import rafulAlamPortrait from "@/assets/raful-alam.jpg";
 import cover from "@/assets/genetic-blueprint-cover.jpg";
 import { assistant, company, faqs } from "@/content/site";
 import { MAX_USER_MESSAGES, countUserMessages } from "@/lib/assistant/limits";
@@ -229,13 +230,22 @@ function HomeTab({
             <span className="text-[0.95rem] font-medium tracking-[-0.02em]">AKAHELIX</span>
           </span>
           <div className="flex items-center gap-2">
-            <img
-              src={portrait}
-              alt="Dr. Abul Kalam Azad"
-              width={32}
-              height={32}
-              className="size-8 rounded-full object-cover object-[58%_30%] ring-2 ring-blue grayscale"
-            />
+            <div className="flex -space-x-2">
+              <img
+                src={portrait}
+                alt="Dr. Abul Kalam Azad"
+                width={32}
+                height={32}
+                className="size-8 rounded-full object-cover object-[58%_30%] ring-2 ring-blue grayscale"
+              />
+              <img
+                src={rafulAlamPortrait}
+                alt="Dr. Rauful Alam"
+                width={32}
+                height={32}
+                className="size-8 rounded-full object-cover ring-2 ring-blue grayscale"
+              />
+            </div>
             <button
               type="button"
               onClick={onClose}
@@ -333,7 +343,7 @@ function HomeTab({
           <Card className="chamfer flex items-center justify-between bg-ink text-on-blue [--cut:1.25rem]">
             <span>
               <span className="block text-[0.9375rem] font-medium">Book a free scoping call</span>
-              <span className="mt-0.5 block text-[0.8125rem] text-on-blue-muted">Speak with Dr. Azad directly</span>
+              <span className="mt-0.5 block text-[0.8125rem] text-on-blue-muted">Speak with our leadership team directly</span>
             </span>
             <ArrowUpRight size={18} weight="light" className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </Card>
