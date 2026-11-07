@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import portrait from "@/assets/azad-portrait.jpg";
 import rafulAlamPortrait from "@/assets/raful-alam.jpg";
 import badrulAnamPortrait from "@/assets/badrul-anam.jpg";
+import abedulHaquePortrait from "@/assets/abedul-haque.jpg";
 import cover from "@/assets/genetic-blueprint-cover.jpg";
 import chromosome from "@/assets/chromosome-white.jpg";
 import flowCell from "@/assets/flow-cell.jpg";
@@ -366,8 +367,8 @@ function Founder() {
   const facts = [
     { k: "NYS Certificate of Qualification", v: "Cytogenetics · Genetic testing · Molecular oncology" },
     { k: "CAP inspection teams", v: "Dr. Azad, since 2020" },
-    { k: "Doctoral & Postdoc", v: "Stockholm Univ. · UPenn · Kumamoto Univ. · SUNY" },
-    { k: "Translational Scope", v: "RNA Splicing · CNS targets · Neurobiology & Pharma Operations" },
+    { k: "Doctoral & Clinical Scope", v: "Stockholm · UPenn · Kumamoto · SUNY · MD Anderson · Montefiore" },
+    { k: "Translational Specializations", v: "High-Throughput NGS · RNA Splicing · Neurobiology · Pharma Ops" },
   ];
   return (
     <section className="container-x py-24 md:py-36">
@@ -378,7 +379,7 @@ function Founder() {
         body="Work directly with the co-owners who design the lab, validate the assays, and drive molecular, operational, and translational innovation."
       />
       
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <FadeUp>
           <Link to="/founder" className="group chamfer block bg-mist h-full">
             <div className="relative aspect-[4/5] overflow-hidden">
@@ -390,17 +391,17 @@ function Founder() {
                 className="h-full w-full object-cover object-[58%_center] grayscale transition-[filter,transform] duration-[1.2s] ease-out-expo group-hover:scale-[1.03] group-hover:grayscale-0 transform-gpu"
               />
             </div>
-            <div className="flex items-end justify-between p-5">
+            <div className="flex items-end justify-between p-4">
               <div>
-                <p className="text-[1.25rem] tracking-[-0.03em]">Dr. Abul Kalam Azad</p>
-                <p className="label-mono mt-1 text-muted-foreground">MD, MSc, PhD · Co-Founder & CEO</p>
+                <p className="text-[1.125rem] tracking-[-0.03em] leading-snug">Dr. Abul Kalam Azad</p>
+                <p className="label-mono mt-1 text-[0.6875rem] text-muted-foreground">MD, MSc, PhD · Co-Founder & CEO</p>
               </div>
-              <span className="label-mono text-blue">01 / 03</span>
+              <span className="label-mono text-blue text-[0.75rem]">01 / 04</span>
             </div>
           </Link>
         </FadeUp>
 
-        <FadeUp delay={0.08}>
+        <FadeUp delay={0.06}>
           <Link to="/founder" className="group chamfer block bg-mist h-full">
             <div className="relative aspect-[4/5] overflow-hidden">
               <img
@@ -411,17 +412,17 @@ function Founder() {
                 className="h-full w-full object-cover grayscale transition-[filter,transform] duration-[1.2s] ease-out-expo group-hover:scale-[1.03] group-hover:grayscale-0 transform-gpu"
               />
             </div>
-            <div className="flex items-end justify-between p-5">
+            <div className="flex items-end justify-between p-4">
               <div>
-                <p className="text-[1.25rem] tracking-[-0.03em]">Dr. Rauful Alam</p>
-                <p className="label-mono mt-1 text-muted-foreground">PhD · Co-Owner & Principal Scientist</p>
+                <p className="text-[1.125rem] tracking-[-0.03em] leading-snug">Dr. Rauful Alam</p>
+                <p className="label-mono mt-1 text-[0.6875rem] text-muted-foreground">PhD · Co-Owner & Principal Scientist</p>
               </div>
-              <span className="label-mono text-blue">02 / 03</span>
+              <span className="label-mono text-blue text-[0.75rem]">02 / 04</span>
             </div>
           </Link>
         </FadeUp>
 
-        <FadeUp delay={0.16}>
+        <FadeUp delay={0.12}>
           <Link to="/founder" className="group chamfer block bg-mist h-full">
             <div className="relative aspect-[4/5] overflow-hidden">
               <img
@@ -432,12 +433,33 @@ function Founder() {
                 className="h-full w-full object-cover grayscale transition-[filter,transform] duration-[1.2s] ease-out-expo group-hover:scale-[1.03] group-hover:grayscale-0 transform-gpu"
               />
             </div>
-            <div className="flex items-end justify-between p-5">
+            <div className="flex items-end justify-between p-4">
               <div>
-                <p className="text-[1.25rem] tracking-[-0.03em]">Dr. Mohammad Badrul Anam</p>
-                <p className="label-mono mt-1 text-muted-foreground">PhD · Co-Owner & Principal Scientist</p>
+                <p className="text-[1.125rem] tracking-[-0.03em] leading-snug">Dr. M. Badrul Anam</p>
+                <p className="label-mono mt-1 text-[0.6875rem] text-muted-foreground">PhD · Co-Owner & Principal Scientist</p>
               </div>
-              <span className="label-mono text-blue">03 / 03</span>
+              <span className="label-mono text-blue text-[0.75rem]">03 / 04</span>
+            </div>
+          </Link>
+        </FadeUp>
+
+        <FadeUp delay={0.18}>
+          <Link to="/founder" className="group chamfer block bg-mist h-full">
+            <div className="relative aspect-[4/5] overflow-hidden">
+              <img
+                src={abedulHaquePortrait}
+                alt="Portrait of Dr. Md. Abedul Haque"
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover grayscale transition-[filter,transform] duration-[1.2s] ease-out-expo group-hover:scale-[1.03] group-hover:grayscale-0 transform-gpu"
+              />
+            </div>
+            <div className="flex items-end justify-between p-4">
+              <div>
+                <p className="text-[1.125rem] tracking-[-0.03em] leading-snug">Dr. Md. Abedul Haque</p>
+                <p className="label-mono mt-1 text-[0.6875rem] text-muted-foreground">PhD, MB(ASCP) · Co-Owner</p>
+              </div>
+              <span className="label-mono text-blue text-[0.75rem]">04 / 04</span>
             </div>
           </Link>
         </FadeUp>
@@ -445,7 +467,7 @@ function Founder() {
 
       <div className="grid-12 mt-14 gap-y-10 border-t border-border pt-12">
         <div className="col-span-12 lg:col-span-6">
-          <RevealText text="Clinical genetics, translational chemistry and pharmaceutical operations." className="display-md max-w-[24ch]" />
+          <RevealText text="Clinical genetics, high-throughput diagnostics, chemistry and operations." className="display-md max-w-[24ch]" />
           <FadeUp delay={0.1} className="mt-6 space-y-4 text-[1.0625rem] leading-relaxed">
             <p>
               Led by <strong>Dr. Abul Kalam Azad</strong>, molecular pathology laboratory director at a New York academic
@@ -453,9 +475,7 @@ function Founder() {
               genetic testing, and molecular oncology.
             </p>
             <p className="text-muted-foreground">
-              Co-owned with <strong>Dr. Rauful Alam</strong>, principal scientist and organic chemist specializing in
-              RNA splicing modulation and CNS targets (PhD Stockholm Univ., UPenn, PTC Therapeutics), and <strong>Dr. Mohammad Badrul Anam</strong>,
-              translational neurobiologist bringing over a decade of pharmaceutical operations, manufacturing leadership, and diagnostic lab direction (PhD Kumamoto Univ., SUNY Upstate Medical University).
+              Co-owned with <strong>Dr. Rauful Alam</strong> (PhD Stockholm Univ., UPenn, PTC Therapeutics; RNA splicing modulation & CNS targets), <strong>Dr. Mohammad Badrul Anam</strong> (PhD Kumamoto Univ., SUNY Upstate; translational neurobiology & pharmaceutical operations), and <strong>Dr. Md. Abedul Haque</strong> (PhD, MB(ASCP)ᶜᵐ; MD Anderson Cancer Center, Montefiore / Einstein; molecular pathology & high-throughput NGS diagnostics).
             </p>
           </FadeUp>
         </div>

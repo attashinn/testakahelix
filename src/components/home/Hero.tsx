@@ -4,6 +4,7 @@ import { useRef } from "react";
 import portrait from "@/assets/azad-portrait.jpg";
 import rafulAlamPortrait from "@/assets/raful-alam.jpg";
 import badrulAnamPortrait from "@/assets/badrul-anam.jpg";
+import abedulHaquePortrait from "@/assets/abedul-haque.jpg";
 import heroHelix from "@/assets/hero-helix.jpg";
 import { Cta, TextLink } from "@/components/site/Cta";
 import { Counter, EASE, FadeUp, RevealText, introDelay } from "@/components/site/motion";
@@ -83,28 +84,35 @@ export function Hero() {
               <img
                 src={portrait}
                 alt="Dr. Abul Kalam Azad"
-                width={40}
-                height={40}
-                className="size-10 rounded-full border-2 border-blue object-cover object-[58%_30%] grayscale"
+                width={36}
+                height={36}
+                className="size-9 rounded-full border-2 border-blue object-cover object-[58%_30%] grayscale"
               />
               <img
                 src={rafulAlamPortrait}
                 alt="Dr. Rauful Alam"
-                width={40}
-                height={40}
-                className="size-10 rounded-full border-2 border-blue object-cover grayscale"
+                width={36}
+                height={36}
+                className="size-9 rounded-full border-2 border-blue object-cover grayscale"
               />
               <img
                 src={badrulAnamPortrait}
                 alt="Dr. Mohammad Badrul Anam"
-                width={40}
-                height={40}
-                className="size-10 rounded-full border-2 border-blue object-cover grayscale"
+                width={36}
+                height={36}
+                className="size-9 rounded-full border-2 border-blue object-cover grayscale"
+              />
+              <img
+                src={abedulHaquePortrait}
+                alt="Dr. Md. Abedul Haque"
+                width={36}
+                height={36}
+                className="size-9 rounded-full border-2 border-blue object-cover grayscale"
               />
             </div>
             <p className="text-[0.875rem] leading-snug">
               Executive leadership & co-owners
-              <span className="mt-1 block text-on-blue-muted">Dr. Azad, Dr. Alam & Dr. Anam</span>
+              <span className="mt-1 block text-on-blue-muted">Dr. Azad, Dr. Alam, Dr. Anam & Dr. Haque</span>
             </p>
           </FadeUp>
         </div>

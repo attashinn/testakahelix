@@ -13,12 +13,15 @@ export const company = {
   coOwnerCreds: "PhD",
   coOwner2: "Dr. Mohammad Badrul Anam",
   coOwner2Creds: "PhD",
+  coOwner3: "Dr. Md. Abedul Haque",
+  coOwner3Creds: "PhD, MB(ASCP)ᶜᵐ",
 };
 
 export const profiles = [
   { label: "Dr. Abul Kalam Azad · LinkedIn", href: "https://www.linkedin.com/in/abul-kalam-azad-75496362/" },
   { label: "Dr. Rauful Alam · LinkedIn", href: "https://www.linkedin.com/in/rauful-alam-phd-12536365/" },
   { label: "Dr. Mohammad Badrul Anam · LinkedIn", href: "https://www.linkedin.com/in/mohammad-badrul-anam-14340b41/" },
+  { label: "Dr. Md. Abedul Haque · LinkedIn", href: "https://www.linkedin.com/in/md-abedul-haque-ph-d-mb-ascp-96baa2199/" },
   {
     label: "PubMed bibliography",
     href: "https://www.ncbi.nlm.nih.gov/myncbi/abul%20kalam.azad.1/bibliography/public/",
@@ -462,6 +465,22 @@ export const anamRoute = [
   { city: "Kumamoto", years: "2010–2014", what: "PhD in Medical Sciences, Kumamoto University — Developmental neurobiology & stem cell reprogramming" },
   { city: "Pharma & ideSHi", years: "2014–2021", what: "Pharmaceutical operations leadership, manufacturing scale-up, and diagnostic laboratory director at ideSHi" },
   { city: "New York", years: "2021–", what: "Postdoctoral Research Associate, SUNY Upstate Medical University — Translational neuroscience & neurodegenerative disease models" },
+];
+
+export const haqueCredentials = [
+  { k: "Doctoral Degree & Certification", v: "PhD in Biological Sciences; Certified Technologist in Molecular Biology, MB(ASCP)ᶜᵐ." },
+  { k: "Clinical Pathology Leadership", v: "Montefiore Medical Center & Albert Einstein College of Medicine, New York — Molecular Pathology Diagnostics." },
+  { k: "Oncology Research Foundation", v: "UT MD Anderson Cancer Center, Houston — Department of Hematopathology; and Emory University." },
+  { k: "Core Specialization", v: "High-Throughput Molecular Genetics, Next-Generation Sequencing (NGS), Chimerism & Somatic Cancer Diagnostics." },
+  { k: "Diagnostic Scope", v: "10+ years in high-complexity molecular diagnostics, assay validation, quality systems & clinical laboratory workflows." },
+  { k: "Research Publications", v: "Author and co-investigator of high-impact research in genomic oncology, hematopathology, and molecular therapeutics." },
+];
+
+export const haqueRoute = [
+  { city: "Doctoral Training", years: "PhD", what: "Doctoral research in molecular biology, biochemistry, and cellular mechanisms" },
+  { city: "Atlanta", years: "Emory", what: "Postdoctoral fellow in molecular pathology & signaling mechanisms, Emory University" },
+  { city: "Houston", years: "MD Anderson", what: "Research Scientist, Department of Hematopathology, University of Texas MD Anderson Cancer Center" },
+  { city: "New York", years: "Montefiore", what: "Molecular diagnostics scientist, Montefiore Medical Center & Albert Einstein College of Medicine" },
 ];
 
 export const teaching = [
