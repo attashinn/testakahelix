@@ -9,6 +9,8 @@ export const company = {
   email: "azadak71@proton.me",
   founder: "Dr. Abul Kalam Azad",
   founderCreds: "MD, MSc, PhD",
+  coFounder: "Abu Sufian",
+  coFounderCreds: "MS, MB(ASCPi)",
   coOwner: "Dr. Rauful Alam",
   coOwnerCreds: "PhD",
   coOwner2: "Dr. Mohammad Badrul Anam",
@@ -19,6 +21,7 @@ export const company = {
 
 export const profiles = [
   { label: "Dr. Abul Kalam Azad · LinkedIn", href: "https://www.linkedin.com/in/abul-kalam-azad-75496362/" },
+  { label: "Abu Sufian · LinkedIn", href: "https://www.linkedin.com/in/abu-sufian-ms-mb-ascpi-769b1a96/" },
   { label: "Dr. Rauful Alam · LinkedIn", href: "https://www.linkedin.com/in/rauful-alam-phd-12536365/" },
   { label: "Dr. Mohammad Badrul Anam · LinkedIn", href: "https://www.linkedin.com/in/mohammad-badrul-anam-14340b41/" },
   { label: "Dr. Md. Abedul Haque · LinkedIn", href: "https://www.linkedin.com/in/md-abedul-haque-ph-d-mb-ascp-96baa2199/" },
@@ -481,6 +484,22 @@ export const haqueRoute = [
   { city: "Atlanta", years: "Emory", what: "Postdoctoral fellow in molecular pathology & signaling mechanisms, Emory University" },
   { city: "Houston", years: "MD Anderson", what: "Research Scientist, Department of Hematopathology, University of Texas MD Anderson Cancer Center" },
   { city: "New York", years: "Montefiore", what: "Molecular diagnostics scientist, Montefiore Medical Center & Albert Einstein College of Medicine" },
+];
+
+export const sufianCredentials = [
+  { k: "Education & Board Certification", v: "BSc & MSc in Biochemistry & Molecular Biology (University of Dhaka); Certified Technologist in Molecular Biology, MB(ASCPi)." },
+  { k: "Diagnostic Laboratory Leadership", v: "Junior Consultant at DNA Solution Ltd. — Designed, validated, and optimized high-throughput clinical molecular diagnostic assays." },
+  { k: "Forensic Genetics & Human ID", v: "Scientific Officer & DNA Analyst, National Forensic DNA Profiling Laboratory (NFDPL), Dhaka Medical College." },
+  { k: "Core Methodologies", v: "Quantitative PCR, Sanger Sequencing, Next-Generation Sequencing (NGS), STR Multiplexing & Pharmacogenomics (PGx)." },
+  { k: "Diagnostic Specialization", v: "Thalassemia genetic screening, oncology molecular panels, human identification (HID), and quality assurance to ISO 15189." },
+  { k: "Research Contributions", v: "Author of peer-reviewed investigations in forensic DNA analysis, genetic variation, and diagnostic assay workflows." },
+];
+
+export const sufianRoute = [
+  { city: "Dhaka", years: "BSc & MSc", what: "Biochemistry and Molecular Biology, University of Dhaka — Molecular biology and diagnostic biochemistry foundation" },
+  { city: "Forensic Lab", years: "NFDPL", what: "Scientific Officer and DNA Analyst, National Forensic DNA Profiling Laboratory at Dhaka Medical College" },
+  { city: "Clinical Lab", years: "DNA Solution", what: "Junior Consultant, DNA Solution Ltd. — Molecular diagnostic assay design, PCR, sequencing, PGx, and thalassemia panels" },
+  { city: "Global", years: "ASCP", what: "Board-certified Technologist in Molecular Biology (ASCPi) and Co-Founder of AKAHELIX" },
 ];
 
 export const teaching = [

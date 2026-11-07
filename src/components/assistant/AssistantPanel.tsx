@@ -33,6 +33,7 @@ import { Shimmer } from "@/components/ai-elements/shimmer";
 import { Mark } from "@/components/site/Wordmark";
 import { EASE } from "@/components/site/motion";
 import portrait from "@/assets/azad-portrait.jpg";
+import abuSufianPortrait from "@/assets/abu-sufian.jpg";
 import rafulAlamPortrait from "@/assets/raful-alam.jpg";
 import badrulAnamPortrait from "@/assets/badrul-anam.jpg";
 import abedulHaquePortrait from "@/assets/abedul-haque.jpg";
@@ -239,6 +240,13 @@ function HomeTab({
                 width={32}
                 height={32}
                 className="size-8 rounded-full object-cover object-[58%_30%] ring-2 ring-blue grayscale"
+              />
+              <img
+                src={abuSufianPortrait}
+                alt="Abu Sufian"
+                width={32}
+                height={32}
+                className="size-8 rounded-full object-cover ring-2 ring-blue grayscale"
               />
               <img
                 src={rafulAlamPortrait}

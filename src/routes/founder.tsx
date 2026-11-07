@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import portrait from "@/assets/azad-portrait.jpg";
+import abuSufianPortrait from "@/assets/abu-sufian.jpg";
 import rafulAlamPortrait from "@/assets/raful-alam.jpg";
 import badrulAnamPortrait from "@/assets/badrul-anam.jpg";
 import abedulHaquePortrait from "@/assets/abedul-haque.jpg";
@@ -14,6 +15,8 @@ import {
   anamRoute,
   haqueCredentials,
   haqueRoute,
+  sufianCredentials,
+  sufianRoute,
   book,
   credentials,
   profiles,
@@ -24,16 +27,16 @@ import {
 export const Route = createFileRoute("/founder")({
   head: () => ({
     meta: [
-      { title: "Leadership & Co-Owners — Dr. Azad, Dr. Alam, Dr. Anam & Dr. Haque · AKAHELIX" },
+      { title: "Leadership, Founders & Co-Owners · AKAHELIX" },
       {
         name: "description",
         content:
-          "AKAHELIX is co-owned and directed by Dr. Abul Kalam Azad (MD, MSc, PhD), Dr. Rauful Alam (PhD), Dr. Mohammad Badrul Anam (PhD), and Dr. Md. Abedul Haque (PhD, MB(ASCP)ᶜᵐ).",
+          "AKAHELIX is founded by Dr. Abul Kalam Azad (MD, MSc, PhD) and Abu Sufian (MS, MB(ASCPi)), and co-owned with Dr. Rauful Alam (PhD), Dr. Mohammad Badrul Anam (PhD), and Dr. Md. Abedul Haque (PhD, MB(ASCP)ᶜᵐ).",
       },
-      { property: "og:title", content: "Leadership & Co-Owners — AKAHELIX" },
+      { property: "og:title", content: "Leadership, Founders & Co-Owners — AKAHELIX" },
       {
         property: "og:description",
-        content: "Practising scientists spanning clinical molecular genetics, CAP inspection, RNA translational chemistry, pharmaceutical operations, and high-throughput NGS diagnostics.",
+        content: "Practising scientists spanning clinical molecular genetics, CAP inspection, assay design, RNA translational chemistry, pharmaceutical operations, and high-throughput NGS diagnostics.",
       },
       { property: "og:type", content: "profile" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -48,12 +51,12 @@ function FounderPage() {
       {/* Header intro */}
       <section className="container-x pb-12 pt-32 md:pb-20 md:pt-44">
         <FadeUp onMount delay={introDelay(0)} y={10}>
-          <Chip className="mb-6">Executive Leadership & Co-Owners</Chip>
+          <Chip className="mb-6">Founders, Executive Leadership & Co-Owners</Chip>
         </FadeUp>
         <RevealText as="h1" onMount delay={introDelay(0.05)} text="The scientists behind every build." className="display-xl max-w-[14ch]" />
         <FadeUp onMount delay={introDelay(0.35)}>
           <p className="lede mt-8 max-w-[46ch] text-muted-foreground">
-            AKAHELIX is co-owned and guided by practising scientists whose careers bridge clinical molecular diagnostics, CAP laboratory inspection, RNA translational chemistry, pharmaceutical operations, and high-throughput genomic diagnostics.
+            AKAHELIX is founded and guided by practising scientists whose careers bridge clinical molecular diagnostics, CAP laboratory inspection, assay development, RNA translational chemistry, pharmaceutical operations, and genomic medicine.
           </p>
         </FadeUp>
       </section>
@@ -64,7 +67,7 @@ function FounderPage() {
           <div className="col-span-12 md:col-span-7">
             <FadeUp y={10}>
               <div className="flex items-center gap-3">
-                <span className="label-mono text-blue">01 / 04</span>
+                <span className="label-mono text-blue">01 / 05</span>
                 <span className="label-mono text-muted-foreground">Co-Founder & CEO</span>
               </div>
             </FadeUp>
@@ -144,13 +147,98 @@ function FounderPage() {
         </div>
       </section>
 
-      {/* 02: Dr. Rauful Alam */}
+      {/* 02: Abu Sufian */}
       <section className="container-x border-t border-border py-20 md:py-32">
         <div className="grid-12 gap-y-12">
           <div className="col-span-12 md:col-span-7">
             <FadeUp y={10}>
               <div className="flex items-center gap-3">
-                <span className="label-mono text-blue">02 / 04</span>
+                <span className="label-mono text-blue">02 / 05</span>
+                <span className="label-mono text-muted-foreground">Co-Founder</span>
+              </div>
+            </FadeUp>
+            <h2 className="display-lg mt-4 max-w-[10ch]">Abu Sufian</h2>
+            <FadeUp delay={0.1}>
+              <p className="label-mono mt-4 text-muted-foreground">MS, MB(ASCPi) · Molecular Diagnostics Consultant · Dhaka & Global</p>
+            </FadeUp>
+            <FadeUp delay={0.2} className="mt-10 max-w-[56ch] space-y-5 text-[1.0625rem] leading-relaxed">
+              <p>
+                Molecular biologist and clinical diagnostics consultant specializing in high-throughput molecular assay
+                engineering, genetic disease screening, and human identification.
+              </p>
+              <p className="text-muted-foreground">
+                Board-certified as an International Technologist in Molecular Biology by the American Society for Clinical
+                Pathology (MB [ASCPi]), Abu Sufian brings frontline leadership from DNA Solution Ltd., where he directed
+                the setup, optimization, and clinical validation of real-time PCR, sequencing, pharmacogenomics (PGx), and
+                thalassemia screening pipelines. His background also encompasses forensic DNA casework and disaster victim
+                identification at the National Forensic DNA Profiling Laboratory (NFDPL), Dhaka Medical College.
+              </p>
+            </FadeUp>
+
+            <div className="mt-8">
+              <TextLink href="https://www.linkedin.com/in/abu-sufian-ms-mb-ascpi-769b1a96/">
+                Connect with Abu Sufian on LinkedIn
+              </TextLink>
+            </div>
+          </div>
+          <div className="col-span-12 md:col-span-5">
+            <ImageReveal
+              src={abuSufianPortrait}
+              alt="Portrait of Abu Sufian"
+              width={800}
+              height={800}
+              priority
+              parallax={5}
+              delay={0.2}
+              className="aspect-[4/5]"
+              imgClassName="object-cover grayscale transition-[filter] duration-1000 hover:grayscale-0"
+            />
+            <p className="label-mono mt-3 text-muted-foreground">Dhaka & New York</p>
+          </div>
+        </div>
+
+        {/* Abu Sufian Credentials */}
+        <div className="mt-16 border-t border-border pt-12">
+          <p className="label-mono mb-8 text-muted-foreground">Abu Sufian · Qualifications & Diagnostic Leadership</p>
+          <dl className="grid gap-x-12 md:grid-cols-2">
+            {sufianCredentials.map((c, i) => (
+              <FadeUp key={c.k} delay={(i % 2) * 0.05}>
+                <div className="border-b border-border py-6">
+                  <dt className="label-mono text-muted-foreground">{c.k}</dt>
+                  <dd className="mt-2.5 font-display text-xl leading-snug tracking-tight md:text-[1.3rem]">{c.v}</dd>
+                </div>
+              </FadeUp>
+            ))}
+          </dl>
+        </div>
+
+        {/* Abu Sufian Route */}
+        <div className="mt-16 rounded-[4px] bg-mist p-8 md:p-12">
+          <p className="label-mono mb-8 text-muted-foreground">Abu Sufian · Academic & Diagnostic Pathway</p>
+          <ol className="divide-y divide-border/60">
+            {sufianRoute.map((r, i) => (
+              <FadeUp key={r.city} delay={i * 0.04}>
+                <li className="grid-12 items-baseline gap-y-2 py-6">
+                  <span className="label-mono col-span-2 text-muted-foreground md:col-span-1">0{i + 1}</span>
+                  <span className="col-span-10 font-display text-[clamp(1.75rem,3.5vw,2.75rem)] leading-none tracking-[-0.03em] md:col-span-4">
+                    {r.city}
+                  </span>
+                  <span className="label-mono col-span-12 text-muted-foreground md:col-span-2">{r.years}</span>
+                  <span className="col-span-12 text-muted-foreground md:col-span-5">{r.what}</span>
+                </li>
+              </FadeUp>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* 03: Dr. Rauful Alam */}
+      <section className="container-x border-t border-border py-20 md:py-32">
+        <div className="grid-12 gap-y-12">
+          <div className="col-span-12 md:col-span-7">
+            <FadeUp y={10}>
+              <div className="flex items-center gap-3">
+                <span className="label-mono text-blue">03 / 05</span>
                 <span className="label-mono text-muted-foreground">Co-Owner & Principal Scientist</span>
               </div>
             </FadeUp>
@@ -229,13 +317,13 @@ function FounderPage() {
         </div>
       </section>
 
-      {/* 03: Dr. Mohammad Badrul Anam */}
+      {/* 04: Dr. Mohammad Badrul Anam */}
       <section className="container-x border-t border-border py-20 md:py-32">
         <div className="grid-12 gap-y-12">
           <div className="col-span-12 md:col-span-7">
             <FadeUp y={10}>
               <div className="flex items-center gap-3">
-                <span className="label-mono text-blue">03 / 04</span>
+                <span className="label-mono text-blue">04 / 05</span>
                 <span className="label-mono text-muted-foreground">Co-Owner & Principal Scientist</span>
               </div>
             </FadeUp>
@@ -314,13 +402,13 @@ function FounderPage() {
         </div>
       </section>
 
-      {/* 04: Dr. Md. Abedul Haque */}
+      {/* 05: Dr. Md. Abedul Haque */}
       <section className="container-x border-t border-border py-20 md:py-32">
         <div className="grid-12 gap-y-12">
           <div className="col-span-12 md:col-span-7">
             <FadeUp y={10}>
               <div className="flex items-center gap-3">
-                <span className="label-mono text-blue">04 / 04</span>
+                <span className="label-mono text-blue">05 / 05</span>
                 <span className="label-mono text-muted-foreground">Co-Owner & Principal Scientist</span>
               </div>
             </FadeUp>
@@ -402,7 +490,7 @@ function FounderPage() {
 
       {/* Principles */}
       <section className="container-x py-24 md:py-36 border-t border-border">
-        <SectionLabel n="05">On practice & rigorous science</SectionLabel>
+        <SectionLabel n="06">On practice & rigorous science</SectionLabel>
         <div className="grid-12 mb-16">
           <RevealText
             text="“The most rewarding part is watching a trainee move from asking what a result means to asking whether to believe it.”"
@@ -426,7 +514,7 @@ function FounderPage() {
 
       {/* Public Record & Profiles */}
       <section className="container-x pb-24 md:pb-36">
-        <SectionLabel n="06">Public record & profiles</SectionLabel>
+        <SectionLabel n="07">Public record & profiles</SectionLabel>
         <div className="grid-12 gap-y-10">
           <FadeUp className="col-span-12 md:col-span-6">
             <p className="font-display text-2xl leading-snug tracking-tight md:text-3xl">“{book.provenance}”</p>

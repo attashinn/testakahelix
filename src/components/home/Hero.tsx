@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 
 import portrait from "@/assets/azad-portrait.jpg";
+import abuSufianPortrait from "@/assets/abu-sufian.jpg";
 import rafulAlamPortrait from "@/assets/raful-alam.jpg";
 import badrulAnamPortrait from "@/assets/badrul-anam.jpg";
 import abedulHaquePortrait from "@/assets/abedul-haque.jpg";
@@ -89,6 +90,13 @@ export function Hero() {
                 className="size-9 rounded-full border-2 border-blue object-cover object-[58%_30%] grayscale"
               />
               <img
+                src={abuSufianPortrait}
+                alt="Abu Sufian"
+                width={36}
+                height={36}
+                className="size-9 rounded-full border-2 border-blue object-cover grayscale"
+              />
+              <img
                 src={rafulAlamPortrait}
                 alt="Dr. Rauful Alam"
                 width={36}
@@ -111,8 +119,8 @@ export function Hero() {
               />
             </div>
             <p className="text-[0.875rem] leading-snug">
-              Executive leadership & co-owners
-              <span className="mt-1 block text-on-blue-muted">Dr. Azad, Dr. Alam, Dr. Anam & Dr. Haque</span>
+              Executive leadership & co-founders
+              <span className="mt-1 block text-on-blue-muted">Dr. Azad, A. Sufian, Dr. Alam, Dr. Anam & Dr. Haque</span>
             </p>
           </FadeUp>
         </div>

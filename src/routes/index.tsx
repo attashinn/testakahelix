@@ -3,6 +3,7 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 import { motion } from "motion/react";
 
 import portrait from "@/assets/azad-portrait.jpg";
+import abuSufianPortrait from "@/assets/abu-sufian.jpg";
 import rafulAlamPortrait from "@/assets/raful-alam.jpg";
 import badrulAnamPortrait from "@/assets/badrul-anam.jpg";
 import abedulHaquePortrait from "@/assets/abedul-haque.jpg";
@@ -366,9 +367,9 @@ function StatusChip({ status }: { status: string }) {
 function Founder() {
   const facts = [
     { k: "NYS Certificate of Qualification", v: "Cytogenetics · Genetic testing · Molecular oncology" },
-    { k: "CAP inspection teams", v: "Dr. Azad, since 2020" },
-    { k: "Doctoral & Clinical Scope", v: "Stockholm · UPenn · Kumamoto · SUNY · MD Anderson · Montefiore" },
-    { k: "Translational Specializations", v: "High-Throughput NGS · RNA Splicing · Neurobiology · Pharma Ops" },
+    { k: "Board Certifications", v: "MB(ASCP) · MB(ASCPi) · CAP inspection since 2020" },
+    { k: "Academic & Clinical Scope", v: "Stockholm · UPenn · Kumamoto · SUNY · MD Anderson · Montefiore · Dhaka" },
+    { k: "Translational Specializations", v: "High-Throughput NGS · Assay Validation · RNA Splicing · Neurobiology" },
   ];
   return (
     <section className="container-x py-24 md:py-36">
@@ -376,10 +377,10 @@ function Founder() {
         n="06"
         kicker="Leadership & Ownership"
         title="The scientists behind every build and validation."
-        body="Work directly with the co-owners who design the lab, validate the assays, and drive molecular, operational, and translational innovation."
+        body="Work directly with the founders and co-owners who design the lab, validate the assays, and drive molecular, operational, and translational innovation."
       />
       
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
         <FadeUp>
           <Link to="/founder" className="group chamfer block bg-mist h-full">
             <div className="relative aspect-[4/5] overflow-hidden">
@@ -393,15 +394,36 @@ function Founder() {
             </div>
             <div className="flex items-end justify-between p-4">
               <div>
-                <p className="text-[1.125rem] tracking-[-0.03em] leading-snug">Dr. Abul Kalam Azad</p>
+                <p className="text-[1.0625rem] tracking-[-0.03em] leading-snug">Dr. Abul Kalam Azad</p>
                 <p className="label-mono mt-1 text-[0.6875rem] text-muted-foreground">MD, MSc, PhD · Co-Founder & CEO</p>
               </div>
-              <span className="label-mono text-blue text-[0.75rem]">01 / 04</span>
+              <span className="label-mono text-blue text-[0.75rem]">01 / 05</span>
             </div>
           </Link>
         </FadeUp>
 
-        <FadeUp delay={0.06}>
+        <FadeUp delay={0.05}>
+          <Link to="/founder" className="group chamfer block bg-mist h-full">
+            <div className="relative aspect-[4/5] overflow-hidden">
+              <img
+                src={abuSufianPortrait}
+                alt="Portrait of Abu Sufian"
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover grayscale transition-[filter,transform] duration-[1.2s] ease-out-expo group-hover:scale-[1.03] group-hover:grayscale-0 transform-gpu"
+              />
+            </div>
+            <div className="flex items-end justify-between p-4">
+              <div>
+                <p className="text-[1.0625rem] tracking-[-0.03em] leading-snug">Abu Sufian</p>
+                <p className="label-mono mt-1 text-[0.6875rem] text-muted-foreground">MS, MB(ASCPi) · Co-Founder</p>
+              </div>
+              <span className="label-mono text-blue text-[0.75rem]">02 / 05</span>
+            </div>
+          </Link>
+        </FadeUp>
+
+        <FadeUp delay={0.1}>
           <Link to="/founder" className="group chamfer block bg-mist h-full">
             <div className="relative aspect-[4/5] overflow-hidden">
               <img
@@ -414,15 +436,15 @@ function Founder() {
             </div>
             <div className="flex items-end justify-between p-4">
               <div>
-                <p className="text-[1.125rem] tracking-[-0.03em] leading-snug">Dr. Rauful Alam</p>
+                <p className="text-[1.0625rem] tracking-[-0.03em] leading-snug">Dr. Rauful Alam</p>
                 <p className="label-mono mt-1 text-[0.6875rem] text-muted-foreground">PhD · Co-Owner & Principal Scientist</p>
               </div>
-              <span className="label-mono text-blue text-[0.75rem]">02 / 04</span>
+              <span className="label-mono text-blue text-[0.75rem]">03 / 05</span>
             </div>
           </Link>
         </FadeUp>
 
-        <FadeUp delay={0.12}>
+        <FadeUp delay={0.15}>
           <Link to="/founder" className="group chamfer block bg-mist h-full">
             <div className="relative aspect-[4/5] overflow-hidden">
               <img
@@ -435,15 +457,15 @@ function Founder() {
             </div>
             <div className="flex items-end justify-between p-4">
               <div>
-                <p className="text-[1.125rem] tracking-[-0.03em] leading-snug">Dr. M. Badrul Anam</p>
+                <p className="text-[1.0625rem] tracking-[-0.03em] leading-snug">Dr. M. Badrul Anam</p>
                 <p className="label-mono mt-1 text-[0.6875rem] text-muted-foreground">PhD · Co-Owner & Principal Scientist</p>
               </div>
-              <span className="label-mono text-blue text-[0.75rem]">03 / 04</span>
+              <span className="label-mono text-blue text-[0.75rem]">04 / 05</span>
             </div>
           </Link>
         </FadeUp>
 
-        <FadeUp delay={0.18}>
+        <FadeUp delay={0.2}>
           <Link to="/founder" className="group chamfer block bg-mist h-full">
             <div className="relative aspect-[4/5] overflow-hidden">
               <img
@@ -456,10 +478,10 @@ function Founder() {
             </div>
             <div className="flex items-end justify-between p-4">
               <div>
-                <p className="text-[1.125rem] tracking-[-0.03em] leading-snug">Dr. Md. Abedul Haque</p>
+                <p className="text-[1.0625rem] tracking-[-0.03em] leading-snug">Dr. Md. Abedul Haque</p>
                 <p className="label-mono mt-1 text-[0.6875rem] text-muted-foreground">PhD, MB(ASCP) · Co-Owner</p>
               </div>
-              <span className="label-mono text-blue text-[0.75rem]">04 / 04</span>
+              <span className="label-mono text-blue text-[0.75rem]">05 / 05</span>
             </div>
           </Link>
         </FadeUp>
@@ -470,9 +492,7 @@ function Founder() {
           <RevealText text="Clinical genetics, high-throughput diagnostics, chemistry and operations." className="display-md max-w-[24ch]" />
           <FadeUp delay={0.1} className="mt-6 space-y-4 text-[1.0625rem] leading-relaxed">
             <p>
-              Led by <strong>Dr. Abul Kalam Azad</strong>, molecular pathology laboratory director at a New York academic
-              medical center and Assistant Professor of Pathology, with NYS CoQ qualifications in cytogenetics,
-              genetic testing, and molecular oncology.
+              Founded by <strong>Dr. Abul Kalam Azad</strong> (MD, MSc, PhD, NYS CoQ director in cytogenetics, genetic testing, and molecular oncology) and <strong>Abu Sufian</strong> (MS, MB(ASCPi), molecular diagnostic assay consultant and DNA forensics analyst).
             </p>
             <p className="text-muted-foreground">
               Co-owned with <strong>Dr. Rauful Alam</strong> (PhD Stockholm Univ., UPenn, PTC Therapeutics; RNA splicing modulation & CNS targets), <strong>Dr. Mohammad Badrul Anam</strong> (PhD Kumamoto Univ., SUNY Upstate; translational neurobiology & pharmaceutical operations), and <strong>Dr. Md. Abedul Haque</strong> (PhD, MB(ASCP)ᶜᵐ; MD Anderson Cancer Center, Montefiore / Einstein; molecular pathology & high-throughput NGS diagnostics).
