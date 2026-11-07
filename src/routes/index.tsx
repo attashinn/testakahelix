@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 
 import portrait from "@/assets/azad-portrait.jpg";
 import rafulAlamPortrait from "@/assets/raful-alam.jpg";
+import badrulAnamPortrait from "@/assets/badrul-anam.jpg";
 import cover from "@/assets/genetic-blueprint-cover.jpg";
 import chromosome from "@/assets/chromosome-white.jpg";
 import flowCell from "@/assets/flow-cell.jpg";
@@ -365,8 +366,8 @@ function Founder() {
   const facts = [
     { k: "NYS Certificate of Qualification", v: "Cytogenetics · Genetic testing · Molecular oncology" },
     { k: "CAP inspection teams", v: "Dr. Azad, since 2020" },
-    { k: "Doctoral & Postdoc", v: "Stockholm Univ. · UPenn (Dr. Alam)" },
-    { k: "Translational Specialization", v: "RNA Splicing · CNS targets · Medicinal chemistry" },
+    { k: "Doctoral & Postdoc", v: "Stockholm Univ. · UPenn · Kumamoto Univ. · SUNY" },
+    { k: "Translational Scope", v: "RNA Splicing · CNS targets · Neurobiology & Pharma Operations" },
   ];
   return (
     <section className="container-x py-24 md:py-36">
@@ -374,73 +375,93 @@ function Founder() {
         n="06"
         kicker="Leadership & Ownership"
         title="The scientists behind every build and validation."
-        body="Work directly with the co-owners who design the lab, validate the assays, and drive molecular and translational innovation."
+        body="Work directly with the co-owners who design the lab, validate the assays, and drive molecular, operational, and translational innovation."
       />
-      <div className="grid-12 gap-y-12">
-        <div className="col-span-12 lg:col-span-6">
-          <div className="grid gap-4 sm:grid-cols-2">
-            <FadeUp>
-              <Link to="/founder" className="group chamfer block bg-mist h-full">
-                <div className="relative aspect-[4/5] overflow-hidden">
-                  <img
-                    src={portrait}
-                    alt="Portrait of Dr. Abul Kalam Azad"
-                    loading="lazy"
-                    decoding="async"
-                    className="h-full w-full object-cover object-[58%_center] grayscale transition-[filter,transform] duration-[1.2s] ease-out-expo group-hover:scale-[1.03] group-hover:grayscale-0 transform-gpu"
-                  />
-                </div>
-                <div className="flex items-end justify-between p-5">
-                  <div>
-                    <p className="text-[1.375rem] tracking-[-0.03em]">Dr. Abul Kalam Azad</p>
-                    <p className="label-mono mt-1 text-muted-foreground">MD, MSc, PhD · Co-Founder & CEO</p>
-                  </div>
-                  <span className="label-mono text-blue">01 / 02</span>
-                </div>
-              </Link>
-            </FadeUp>
+      
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <FadeUp>
+          <Link to="/founder" className="group chamfer block bg-mist h-full">
+            <div className="relative aspect-[4/5] overflow-hidden">
+              <img
+                src={portrait}
+                alt="Portrait of Dr. Abul Kalam Azad"
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover object-[58%_center] grayscale transition-[filter,transform] duration-[1.2s] ease-out-expo group-hover:scale-[1.03] group-hover:grayscale-0 transform-gpu"
+              />
+            </div>
+            <div className="flex items-end justify-between p-5">
+              <div>
+                <p className="text-[1.25rem] tracking-[-0.03em]">Dr. Abul Kalam Azad</p>
+                <p className="label-mono mt-1 text-muted-foreground">MD, MSc, PhD · Co-Founder & CEO</p>
+              </div>
+              <span className="label-mono text-blue">01 / 03</span>
+            </div>
+          </Link>
+        </FadeUp>
 
-            <FadeUp delay={0.08}>
-              <Link to="/founder" className="group chamfer block bg-mist h-full">
-                <div className="relative aspect-[4/5] overflow-hidden">
-                  <img
-                    src={rafulAlamPortrait}
-                    alt="Portrait of Dr. Rauful Alam"
-                    loading="lazy"
-                    decoding="async"
-                    className="h-full w-full object-cover grayscale transition-[filter,transform] duration-[1.2s] ease-out-expo group-hover:scale-[1.03] group-hover:grayscale-0 transform-gpu"
-                  />
-                </div>
-                <div className="flex items-end justify-between p-5">
-                  <div>
-                    <p className="text-[1.375rem] tracking-[-0.03em]">Dr. Rauful Alam</p>
-                    <p className="label-mono mt-1 text-muted-foreground">PhD · Co-Owner & Principal Scientist</p>
-                  </div>
-                  <span className="label-mono text-blue">02 / 02</span>
-                </div>
-              </Link>
-            </FadeUp>
-          </div>
+        <FadeUp delay={0.08}>
+          <Link to="/founder" className="group chamfer block bg-mist h-full">
+            <div className="relative aspect-[4/5] overflow-hidden">
+              <img
+                src={rafulAlamPortrait}
+                alt="Portrait of Dr. Rauful Alam"
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover grayscale transition-[filter,transform] duration-[1.2s] ease-out-expo group-hover:scale-[1.03] group-hover:grayscale-0 transform-gpu"
+              />
+            </div>
+            <div className="flex items-end justify-between p-5">
+              <div>
+                <p className="text-[1.25rem] tracking-[-0.03em]">Dr. Rauful Alam</p>
+                <p className="label-mono mt-1 text-muted-foreground">PhD · Co-Owner & Principal Scientist</p>
+              </div>
+              <span className="label-mono text-blue">02 / 03</span>
+            </div>
+          </Link>
+        </FadeUp>
+
+        <FadeUp delay={0.16}>
+          <Link to="/founder" className="group chamfer block bg-mist h-full">
+            <div className="relative aspect-[4/5] overflow-hidden">
+              <img
+                src={badrulAnamPortrait}
+                alt="Portrait of Dr. Mohammad Badrul Anam"
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover grayscale transition-[filter,transform] duration-[1.2s] ease-out-expo group-hover:scale-[1.03] group-hover:grayscale-0 transform-gpu"
+              />
+            </div>
+            <div className="flex items-end justify-between p-5">
+              <div>
+                <p className="text-[1.25rem] tracking-[-0.03em]">Dr. Mohammad Badrul Anam</p>
+                <p className="label-mono mt-1 text-muted-foreground">PhD · Co-Owner & Principal Scientist</p>
+              </div>
+              <span className="label-mono text-blue">03 / 03</span>
+            </div>
+          </Link>
+        </FadeUp>
+      </div>
+
+      <div className="grid-12 mt-14 gap-y-10 border-t border-border pt-12">
+        <div className="col-span-12 lg:col-span-6">
+          <RevealText text="Clinical genetics, translational chemistry and pharmaceutical operations." className="display-md max-w-[24ch]" />
+          <FadeUp delay={0.1} className="mt-6 space-y-4 text-[1.0625rem] leading-relaxed">
+            <p>
+              Led by <strong>Dr. Abul Kalam Azad</strong>, molecular pathology laboratory director at a New York academic
+              medical center and Assistant Professor of Pathology, with NYS CoQ qualifications in cytogenetics,
+              genetic testing, and molecular oncology.
+            </p>
+            <p className="text-muted-foreground">
+              Co-owned with <strong>Dr. Rauful Alam</strong>, principal scientist and organic chemist specializing in
+              RNA splicing modulation and CNS targets (PhD Stockholm Univ., UPenn, PTC Therapeutics), and <strong>Dr. Mohammad Badrul Anam</strong>,
+              translational neurobiologist bringing over a decade of pharmaceutical operations, manufacturing leadership, and diagnostic lab direction (PhD Kumamoto Univ., SUNY Upstate Medical University).
+            </p>
+          </FadeUp>
         </div>
 
         <div className="col-span-12 flex flex-col justify-between lg:col-span-6 lg:pl-6">
-          <div>
-            <RevealText text="Laboratory genetics, regulatory inspection and RNA translational chemistry." className="display-md max-w-[22ch]" />
-            <FadeUp delay={0.1} className="mt-8 space-y-5 text-[1.0625rem] leading-relaxed">
-              <p>
-                Led by <strong>Dr. Abul Kalam Azad</strong>, molecular pathology laboratory director at a New York academic
-                medical center and Assistant Professor of Pathology, with NYS CoQ qualifications in cytogenetics,
-                genetic testing, and molecular oncology.
-              </p>
-              <p className="text-muted-foreground">
-                Co-owned with <strong>Dr. Rauful Alam</strong>, principal scientist and organic chemist specializing in
-                RNA splicing modulation, CNS targets, and anti-inflammatory therapeutics with postdoctoral research at
-                the University of Pennsylvania (UPenn) and a PhD from Stockholm University.
-              </p>
-            </FadeUp>
-          </div>
-
-          <dl className="mt-10 grid gap-3 sm:grid-cols-2">
+          <dl className="grid gap-3 sm:grid-cols-2">
             {facts.map((f, i) => (
               <FadeUp key={f.k} delay={i * 0.06} className="rounded-[4px] bg-mist p-5">
                 <dt className="label-mono text-muted-foreground">{f.k}</dt>
@@ -449,8 +470,8 @@ function Founder() {
             ))}
           </dl>
 
-          <FadeUp delay={0.1} className="mt-10">
-            <TextLink to="/founder">View leadership profiles & public record</TextLink>
+          <FadeUp delay={0.1} className="mt-8">
+            <TextLink to="/founder">View leadership profiles, credentials & public record</TextLink>
           </FadeUp>
         </div>
       </div>

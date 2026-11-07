@@ -11,11 +11,14 @@ export const company = {
   founderCreds: "MD, MSc, PhD",
   coOwner: "Dr. Rauful Alam",
   coOwnerCreds: "PhD",
+  coOwner2: "Dr. Mohammad Badrul Anam",
+  coOwner2Creds: "PhD",
 };
 
 export const profiles = [
   { label: "Dr. Abul Kalam Azad · LinkedIn", href: "https://www.linkedin.com/in/abul-kalam-azad-75496362/" },
   { label: "Dr. Rauful Alam · LinkedIn", href: "https://www.linkedin.com/in/rauful-alam-phd-12536365/" },
+  { label: "Dr. Mohammad Badrul Anam · LinkedIn", href: "https://www.linkedin.com/in/mohammad-badrul-anam-14340b41/" },
   {
     label: "PubMed bibliography",
     href: "https://www.ncbi.nlm.nih.gov/myncbi/abul%20kalam.azad.1/bibliography/public/",
@@ -443,6 +446,22 @@ export const alamRoute = [
   { city: "Stockholm", years: "2012–2016", what: "PhD in Organic Chemistry, Stockholm University — Catalytic & stereoselective transformations" },
   { city: "Philadelphia", years: "2016–2018", what: "Postdoctoral Researcher, University of Pennsylvania (UPenn) — Photoredox & organoboron catalysis" },
   { city: "New Jersey", years: "2018–", what: "Principal Scientist, PTC Therapeutics — RNA splicing modulation & CNS therapeutics" },
+];
+
+export const anamCredentials = [
+  { k: "Doctoral Degree", v: "PhD in Medical & Life Sciences, Kumamoto University, Japan." },
+  { k: "Postdoctoral Fellowship", v: "SUNY Upstate Medical University, New York — Translational Neuroscience & Alzheimer's Models." },
+  { k: "Industry & Operations", v: "Over 10 years of pharmaceutical operations leadership, manufacturing setup & commercialization." },
+  { k: "Core Specialization", v: "Developmental Neurobiology, Cancer Cell Reprogramming, Stem Cell Technology & Translational CRO Operations." },
+  { k: "Diagnostic Leadership", v: "Former Laboratory Director and Project Lead at the Institute for Developing Science and Health Initiatives (ideSHi)." },
+  { k: "Research Publications", v: "Author of peer-reviewed research in developmental biology, neurodegeneration, and biomedical mechanisms." },
+];
+
+export const anamRoute = [
+  { city: "Dhaka", years: "–2009", what: "BSc & MSc in Biochemistry & Molecular Biology, University of Dhaka" },
+  { city: "Kumamoto", years: "2010–2014", what: "PhD in Medical Sciences, Kumamoto University — Developmental neurobiology & stem cell reprogramming" },
+  { city: "Pharma & ideSHi", years: "2014–2021", what: "Pharmaceutical operations leadership, manufacturing scale-up, and diagnostic laboratory director at ideSHi" },
+  { city: "New York", years: "2021–", what: "Postdoctoral Research Associate, SUNY Upstate Medical University — Translational neuroscience & neurodegenerative disease models" },
 ];
 
 export const teaching = [

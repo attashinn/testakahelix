@@ -34,6 +34,7 @@ import { Mark } from "@/components/site/Wordmark";
 import { EASE } from "@/components/site/motion";
 import portrait from "@/assets/azad-portrait.jpg";
 import rafulAlamPortrait from "@/assets/raful-alam.jpg";
+import badrulAnamPortrait from "@/assets/badrul-anam.jpg";
 import cover from "@/assets/genetic-blueprint-cover.jpg";
 import { assistant, company, faqs } from "@/content/site";
 import { MAX_USER_MESSAGES, countUserMessages } from "@/lib/assistant/limits";
@@ -241,6 +242,13 @@ function HomeTab({
               <img
                 src={rafulAlamPortrait}
                 alt="Dr. Rauful Alam"
+                width={32}
+                height={32}
+                className="size-8 rounded-full object-cover ring-2 ring-blue grayscale"
+              />
+              <img
+                src={badrulAnamPortrait}
+                alt="Dr. Mohammad Badrul Anam"
                 width={32}
                 height={32}
                 className="size-8 rounded-full object-cover ring-2 ring-blue grayscale"
