@@ -6,6 +6,10 @@ import abuSufianPortrait from "@/assets/abu-sufian.jpg";
 import rafulAlamPortrait from "@/assets/raful-alam.jpg";
 import badrulAnamPortrait from "@/assets/badrul-anam.jpg";
 import abedulHaquePortrait from "@/assets/abedul-haque.jpg";
+import belayatPortrait from "@/assets/belayat-hossain.jpg";
+import mozumderPortrait from "@/assets/ashish-mozumder.jpg";
+import tangirPortrait from "@/assets/tangir-ahamed.jpg";
+import arifPortrait from "@/assets/mohammad-arif.jpg";
 import heroHelix from "@/assets/hero-helix.jpg";
 import { Cta, TextLink } from "@/components/site/Cta";
 import { Counter, EASE, FadeUp, RevealText, introDelay } from "@/components/site/motion";
@@ -117,10 +121,38 @@ export function Hero() {
                 height={36}
                 className="size-9 rounded-full border-2 border-blue object-cover grayscale"
               />
+              <img
+                src={belayatPortrait}
+                alt="Dr. Mohammad Belayat Hossain"
+                width={36}
+                height={36}
+                className="size-9 rounded-full border-2 border-blue object-cover grayscale"
+              />
+              <img
+                src={mozumderPortrait}
+                alt="Ashish Kumar Mozumder"
+                width={36}
+                height={36}
+                className="size-9 rounded-full border-2 border-blue object-cover grayscale"
+              />
+              <img
+                src={tangirPortrait}
+                alt="Dr. Tangir Ahamed"
+                width={36}
+                height={36}
+                className="size-9 rounded-full border-2 border-blue object-cover grayscale"
+              />
+              <img
+                src={arifPortrait}
+                alt="Dr. Mohammad Arif"
+                width={36}
+                height={36}
+                className="size-9 rounded-full border-2 border-blue object-cover grayscale"
+              />
             </div>
             <p className="text-[0.875rem] leading-snug">
-              Executive leadership & co-founders
-              <span className="mt-1 block text-on-blue-muted">Dr. Azad, A. Sufian, Dr. Alam, Dr. Anam & Dr. Haque</span>
+              Executive leadership & co-owners
+              <span className="mt-1 block text-on-blue-muted">Dr. Azad, A. Sufian, Dr. Alam, Dr. Anam, Dr. Haque, Dr. Hossain, A. Mozumder, Dr. Ahamed & Dr. Arif</span>
             </p>
           </FadeUp>
         </div>

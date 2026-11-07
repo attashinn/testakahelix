@@ -7,6 +7,10 @@ import abuSufianPortrait from "@/assets/abu-sufian.jpg";
 import rafulAlamPortrait from "@/assets/raful-alam.jpg";
 import badrulAnamPortrait from "@/assets/badrul-anam.jpg";
 import abedulHaquePortrait from "@/assets/abedul-haque.jpg";
+import belayatPortrait from "@/assets/belayat-hossain.jpg";
+import mozumderPortrait from "@/assets/ashish-mozumder.jpg";
+import tangirPortrait from "@/assets/tangir-ahamed.jpg";
+import arifPortrait from "@/assets/mohammad-arif.jpg";
 import cover from "@/assets/genetic-blueprint-cover.jpg";
 import chromosome from "@/assets/chromosome-white.jpg";
 import flowCell from "@/assets/flow-cell.jpg";
@@ -380,7 +384,8 @@ function Founder() {
         body="Work directly with the founders and co-owners who design the lab, validate the assays, and drive molecular, operational, and translational innovation."
       />
       
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
+      {/* Leadership 3x3 Grid: 3 profiles per row */}
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <FadeUp>
           <Link to="/founder" className="group chamfer block bg-mist h-full">
             <div className="relative aspect-[4/5] overflow-hidden">
@@ -395,9 +400,9 @@ function Founder() {
             <div className="flex items-end justify-between p-4">
               <div>
                 <p className="text-[1.0625rem] tracking-[-0.03em] leading-snug">Dr. Abul Kalam Azad</p>
-                <p className="label-mono mt-1 text-[0.6875rem] text-muted-foreground">MD, MSc, PhD · Co-Founder & CEO</p>
+                <p className="label-mono mt-1 text-[0.6875rem] text-muted-foreground">MD, MSc, PhD · Founder & CEO</p>
               </div>
-              <span className="label-mono text-blue text-[0.75rem]">01 / 05</span>
+              <span className="label-mono text-blue text-[0.75rem]">01 / 09</span>
             </div>
           </Link>
         </FadeUp>
@@ -416,9 +421,9 @@ function Founder() {
             <div className="flex items-end justify-between p-4">
               <div>
                 <p className="text-[1.0625rem] tracking-[-0.03em] leading-snug">Abu Sufian</p>
-                <p className="label-mono mt-1 text-[0.6875rem] text-muted-foreground">MS, MB(ASCPi) · Co-Founder</p>
+                <p className="label-mono mt-1 text-[0.6875rem] text-muted-foreground">MS, MB(ASCPi) · Co-Owner</p>
               </div>
-              <span className="label-mono text-blue text-[0.75rem]">02 / 05</span>
+              <span className="label-mono text-blue text-[0.75rem]">02 / 09</span>
             </div>
           </Link>
         </FadeUp>
@@ -439,7 +444,7 @@ function Founder() {
                 <p className="text-[1.0625rem] tracking-[-0.03em] leading-snug">Dr. Rauful Alam</p>
                 <p className="label-mono mt-1 text-[0.6875rem] text-muted-foreground">PhD · Co-Owner & Principal Scientist</p>
               </div>
-              <span className="label-mono text-blue text-[0.75rem]">03 / 05</span>
+              <span className="label-mono text-blue text-[0.75rem]">03 / 09</span>
             </div>
           </Link>
         </FadeUp>
@@ -460,7 +465,7 @@ function Founder() {
                 <p className="text-[1.0625rem] tracking-[-0.03em] leading-snug">Dr. M. Badrul Anam</p>
                 <p className="label-mono mt-1 text-[0.6875rem] text-muted-foreground">PhD · Co-Owner & Principal Scientist</p>
               </div>
-              <span className="label-mono text-blue text-[0.75rem]">04 / 05</span>
+              <span className="label-mono text-blue text-[0.75rem]">04 / 09</span>
             </div>
           </Link>
         </FadeUp>
@@ -481,7 +486,91 @@ function Founder() {
                 <p className="text-[1.0625rem] tracking-[-0.03em] leading-snug">Dr. Md. Abedul Haque</p>
                 <p className="label-mono mt-1 text-[0.6875rem] text-muted-foreground">PhD, MB(ASCP) · Co-Owner</p>
               </div>
-              <span className="label-mono text-blue text-[0.75rem]">05 / 05</span>
+              <span className="label-mono text-blue text-[0.75rem]">05 / 09</span>
+            </div>
+          </Link>
+        </FadeUp>
+
+        <FadeUp delay={0.25}>
+          <Link to="/founder" className="group chamfer block bg-mist h-full">
+            <div className="relative aspect-[4/5] overflow-hidden">
+              <img
+                src={belayatPortrait}
+                alt="Portrait of Dr. Mohammad Belayat Hossain"
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover grayscale transition-[filter,transform] duration-[1.2s] ease-out-expo group-hover:scale-[1.03] group-hover:grayscale-0 transform-gpu"
+              />
+            </div>
+            <div className="flex items-end justify-between p-4">
+              <div>
+                <p className="text-[1.0625rem] tracking-[-0.03em] leading-snug">Dr. M. Belayat Hossain</p>
+                <p className="label-mono mt-1 text-[0.6875rem] text-muted-foreground">PhD · Co-Owner & Principal Scientist</p>
+              </div>
+              <span className="label-mono text-blue text-[0.75rem]">06 / 09</span>
+            </div>
+          </Link>
+        </FadeUp>
+
+        <FadeUp delay={0.3}>
+          <Link to="/founder" className="group chamfer block bg-mist h-full">
+            <div className="relative aspect-[4/5] overflow-hidden">
+              <img
+                src={mozumderPortrait}
+                alt="Portrait of Ashish Kumar Mozumder"
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover grayscale transition-[filter,transform] duration-[1.2s] ease-out-expo group-hover:scale-[1.03] group-hover:grayscale-0 transform-gpu"
+              />
+            </div>
+            <div className="flex items-end justify-between p-4">
+              <div>
+                <p className="text-[1.0625rem] tracking-[-0.03em] leading-snug">Ashish K. Mozumder</p>
+                <p className="label-mono mt-1 text-[0.6875rem] text-muted-foreground">MS · Co-Owner & Senior Forensic Geneticist</p>
+              </div>
+              <span className="label-mono text-blue text-[0.75rem]">07 / 09</span>
+            </div>
+          </Link>
+        </FadeUp>
+
+        <FadeUp delay={0.35}>
+          <Link to="/founder" className="group chamfer block bg-mist h-full">
+            <div className="relative aspect-[4/5] overflow-hidden">
+              <img
+                src={tangirPortrait}
+                alt="Portrait of Dr. Tangir Ahamed"
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover grayscale transition-[filter,transform] duration-[1.2s] ease-out-expo group-hover:scale-[1.03] group-hover:grayscale-0 transform-gpu"
+              />
+            </div>
+            <div className="flex items-end justify-between p-4">
+              <div>
+                <p className="text-[1.0625rem] tracking-[-0.03em] leading-snug">Dr. Tangir Ahamed</p>
+                <p className="label-mono mt-1 text-[0.6875rem] text-muted-foreground">PhD · Co-Owner & Principal Scientist</p>
+              </div>
+              <span className="label-mono text-blue text-[0.75rem]">08 / 09</span>
+            </div>
+          </Link>
+        </FadeUp>
+
+        <FadeUp delay={0.4}>
+          <Link to="/founder" className="group chamfer block bg-mist h-full">
+            <div className="relative aspect-[4/5] overflow-hidden">
+              <img
+                src={arifPortrait}
+                alt="Portrait of Dr. Mohammad Arif"
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover grayscale transition-[filter,transform] duration-[1.2s] ease-out-expo group-hover:scale-[1.03] group-hover:grayscale-0 transform-gpu"
+              />
+            </div>
+            <div className="flex items-end justify-between p-4">
+              <div>
+                <p className="text-[1.0625rem] tracking-[-0.03em] leading-snug">Dr. Mohammad Arif</p>
+                <p className="label-mono mt-1 text-[0.6875rem] text-muted-foreground">PhD, FACMG · Co-Owner</p>
+              </div>
+              <span className="label-mono text-blue text-[0.75rem]">09 / 09</span>
             </div>
           </Link>
         </FadeUp>
@@ -492,10 +581,7 @@ function Founder() {
           <RevealText text="Clinical genetics, high-throughput diagnostics, chemistry and operations." className="display-md max-w-[24ch]" />
           <FadeUp delay={0.1} className="mt-6 space-y-4 text-[1.0625rem] leading-relaxed">
             <p>
-              Founded by <strong>Dr. Abul Kalam Azad</strong> (MD, MSc, PhD, NYS CoQ director in cytogenetics, genetic testing, and molecular oncology) and <strong>Abu Sufian</strong> (MS, MB(ASCPi), molecular diagnostic assay consultant and DNA forensics analyst).
-            </p>
-            <p className="text-muted-foreground">
-              Co-owned with <strong>Dr. Rauful Alam</strong> (PhD Stockholm Univ., UPenn, PTC Therapeutics; RNA splicing modulation & CNS targets), <strong>Dr. Mohammad Badrul Anam</strong> (PhD Kumamoto Univ., SUNY Upstate; translational neurobiology & pharmaceutical operations), and <strong>Dr. Md. Abedul Haque</strong> (PhD, MB(ASCP)ᶜᵐ; MD Anderson Cancer Center, Montefiore / Einstein; molecular pathology & high-throughput NGS diagnostics).
+              Founded by <strong>Dr. Abul Kalam Azad</strong> (MD, MSc, PhD, NYS CoQ director in cytogenetics, genetic testing, and molecular oncology), and co-owned with <strong>Abu Sufian</strong> (MS, MB(ASCPi), molecular diagnostic assay consultant and DNA forensics analyst), <strong>Dr. Rauful Alam</strong> (PhD Stockholm Univ., UPenn, PTC Therapeutics; RNA splicing modulation & CNS targets), <strong>Dr. Mohammad Badrul Anam</strong> (PhD Kumamoto Univ., SUNY Upstate; translational neurobiology & pharmaceutical operations), <strong>Dr. Md. Abedul Haque</strong> (PhD, MB(ASCP)ᶜᵐ; MD Anderson Cancer Center, Montefiore / Einstein; molecular pathology & high-throughput NGS diagnostics), <strong>Dr. Mohammad Belayat Hossain</strong> (PhD; MD Anderson Cancer Center, Immatics; lentiviral vector analytical development, cell & gene therapy, and cancer immunology), <strong>Ashish Kumar Mozumder</strong> (MS Univ. of Dhaka; National Forensic DNA Profiling Laboratory, DNA Solution; forensic genetics, disaster victim identification, and population STR genomics), <strong>Dr. Tangir Ahamed</strong> (PhD TU Delft; Bristol Myers Squibb; bioprocess CMC development, MSAT, and viral vector manufacturing validation), and <strong>Dr. Mohammad Arif</strong> (PhD, FACMG; Northwell Health / North Shore Univ. Hospital, Hofstra Zucker School of Medicine, Mount Sinai, IBR; ABMGG clinical molecular genetics, clinical molecular pathology, and neurogenetics).
             </p>
           </FadeUp>
         </div>

@@ -37,6 +37,10 @@ import abuSufianPortrait from "@/assets/abu-sufian.jpg";
 import rafulAlamPortrait from "@/assets/raful-alam.jpg";
 import badrulAnamPortrait from "@/assets/badrul-anam.jpg";
 import abedulHaquePortrait from "@/assets/abedul-haque.jpg";
+import belayatPortrait from "@/assets/belayat-hossain.jpg";
+import mozumderPortrait from "@/assets/ashish-mozumder.jpg";
+import tangirPortrait from "@/assets/tangir-ahamed.jpg";
+import arifPortrait from "@/assets/mohammad-arif.jpg";
 import cover from "@/assets/genetic-blueprint-cover.jpg";
 import { assistant, company, faqs } from "@/content/site";
 import { MAX_USER_MESSAGES, countUserMessages } from "@/lib/assistant/limits";
@@ -265,6 +269,34 @@ function HomeTab({
               <img
                 src={abedulHaquePortrait}
                 alt="Dr. Md. Abedul Haque"
+                width={32}
+                height={32}
+                className="size-8 rounded-full object-cover ring-2 ring-blue grayscale"
+              />
+              <img
+                src={belayatPortrait}
+                alt="Dr. Mohammad Belayat Hossain"
+                width={32}
+                height={32}
+                className="size-8 rounded-full object-cover ring-2 ring-blue grayscale"
+              />
+              <img
+                src={mozumderPortrait}
+                alt="Ashish Kumar Mozumder"
+                width={32}
+                height={32}
+                className="size-8 rounded-full object-cover ring-2 ring-blue grayscale"
+              />
+              <img
+                src={tangirPortrait}
+                alt="Dr. Tangir Ahamed"
+                width={32}
+                height={32}
+                className="size-8 rounded-full object-cover ring-2 ring-blue grayscale"
+              />
+              <img
+                src={arifPortrait}
+                alt="Dr. Mohammad Arif"
                 width={32}
                 height={32}
                 className="size-8 rounded-full object-cover ring-2 ring-blue grayscale"

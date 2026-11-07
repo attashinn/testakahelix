@@ -9,14 +9,22 @@ export const company = {
   email: "azadak71@proton.me",
   founder: "Dr. Abul Kalam Azad",
   founderCreds: "MD, MSc, PhD",
-  coFounder: "Abu Sufian",
-  coFounderCreds: "MS, MB(ASCPi)",
+  coOwner1: "Abu Sufian",
+  coOwner1Creds: "MS, MB(ASCPi)",
   coOwner: "Dr. Rauful Alam",
   coOwnerCreds: "PhD",
   coOwner2: "Dr. Mohammad Badrul Anam",
   coOwner2Creds: "PhD",
   coOwner3: "Dr. Md. Abedul Haque",
   coOwner3Creds: "PhD, MB(ASCP)ᶜᵐ",
+  coOwner4: "Dr. Mohammad Belayat Hossain",
+  coOwner4Creds: "PhD",
+  coOwner5: "Ashish Kumar Mozumder",
+  coOwner5Creds: "MS",
+  coOwner6: "Dr. Tangir Ahamed",
+  coOwner6Creds: "PhD",
+  coOwner7: "Dr. Mohammad Arif",
+  coOwner7Creds: "PhD, FACMG",
 };
 
 export const profiles = [
@@ -25,6 +33,10 @@ export const profiles = [
   { label: "Dr. Rauful Alam · LinkedIn", href: "https://www.linkedin.com/in/rauful-alam-phd-12536365/" },
   { label: "Dr. Mohammad Badrul Anam · LinkedIn", href: "https://www.linkedin.com/in/mohammad-badrul-anam-14340b41/" },
   { label: "Dr. Md. Abedul Haque · LinkedIn", href: "https://www.linkedin.com/in/md-abedul-haque-ph-d-mb-ascp-96baa2199/" },
+  { label: "Dr. Mohammad Belayat Hossain · LinkedIn", href: "https://www.linkedin.com/in/mohammad-belayat-hossain-ph-d-b3b0aa82/" },
+  { label: "Ashish Kumar Mozumder · LinkedIn", href: "https://www.linkedin.com/in/ashish-mozumder-47a5b2186/" },
+  { label: "Dr. Tangir Ahamed · LinkedIn", href: "https://www.linkedin.com/in/tangir-ahamed-bb26b259/" },
+  { label: "Dr. Mohammad Arif · LinkedIn", href: "https://www.linkedin.com/in/mohammad-arif-arif-phd-facmg-7019a436/" },
   {
     label: "PubMed bibliography",
     href: "https://www.ncbi.nlm.nih.gov/myncbi/abul%20kalam.azad.1/bibliography/public/",
@@ -499,7 +511,72 @@ export const sufianRoute = [
   { city: "Dhaka", years: "BSc & MSc", what: "Biochemistry and Molecular Biology, University of Dhaka — Molecular biology and diagnostic biochemistry foundation" },
   { city: "Forensic Lab", years: "NFDPL", what: "Scientific Officer and DNA Analyst, National Forensic DNA Profiling Laboratory at Dhaka Medical College" },
   { city: "Clinical Lab", years: "DNA Solution", what: "Junior Consultant, DNA Solution Ltd. — Molecular diagnostic assay design, PCR, sequencing, PGx, and thalassemia panels" },
-  { city: "Global", years: "ASCP", what: "Board-certified Technologist in Molecular Biology (ASCPi) and Co-Founder of AKAHELIX" },
+  { city: "Global", years: "ASCP", what: "Board-certified Technologist in Molecular Biology (ASCPi) and Co-Owner of AKAHELIX" },
+];
+
+export const belayatCredentials = [
+  { k: "Education & Cancer Biology", v: "PhD in Molecular Oncology & Cancer Biology; >15 years of leadership in cancer research, cell and gene therapy, and cancer epigenetics." },
+  { k: "Cell & Gene Therapy (CGT) Leadership", v: "Lentiviral Vector Analytical Development Team Lead at an established clinical-stage T cell therapy biotechnology company (Immatics)." },
+  { k: "Translational Neuro-Oncology", v: "Postdoctoral Fellow & Instructor, Department of Neuro-Oncology & Viroimmunotherapy Laboratory, The University of Texas MD Anderson Cancer Center." },
+  { k: "Analytical & Vector Methodologies", v: "Lentiviral vector characterization, titer & potency assay development, ddPCR, quantitative RT-PCR, flow cytometry, and cGMP tech transfer." },
+  { k: "Mechanistic Oncology & Therapeutics", v: "TIE2 receptor tyrosine kinase signaling, tumor microenvironment, DNA damage response mechanisms, oncolytic virotherapy, and mouse disease models." },
+  { k: "Scholarly Record", v: "High-impact peer-reviewed publications in neuro-oncology, cancer immunology, and viroimmunotherapy, supported by national grants and scientific awards." },
+];
+
+export const belayatRoute = [
+  { city: "Doctoral Training", years: "PhD", what: "Doctoral research in cancer biology, molecular oncology, epigenetics, and cellular signaling" },
+  { city: "Houston", years: "MD Anderson", what: "Postdoctoral Fellow & Instructor, Department of Neuro-Oncology & Viroimmunotherapy Laboratory, UT MD Anderson Cancer Center" },
+  { city: "Biotech", years: "Immatics", what: "Lentiviral Vector Analytical Development Team Lead, clinical T cell receptor (TCR) therapy biotechnology" },
+  { city: "Global", years: "AKAHELIX", what: "Co-Owner & Principal Scientist, cell and gene therapy vector analytics, molecular immunology, and oncology assays" },
+];
+
+export const mozumderCredentials = [
+  { k: "Education & Academic Foundation", v: "BSc (Hons) & MSc in Biochemistry, University of Dhaka (1998, 1999); advanced foundation in biochemical genetics and analytical biochemistry." },
+  { k: "Forensic Genetics & DVI Leadership", v: "Senior Scientist & DNA Analyst, National Forensic DNA Profiling Laboratory (NFDPL), Dhaka Medical College; leading national disaster victim identification missions." },
+  { k: "Clinical Molecular Research", v: "Senior diagnostic collaborator and clinical molecular assay design specialist with DNA Solution Ltd." },
+  { k: "Core Methodologies", v: "Capillary Electrophoresis, Autosomal & Y-STR Multiplexing, Quantitative Fluorescence PCR (QF-PCR), Sanger Sequencing, and Thalassemia Screening." },
+  { k: "Population Genomics & Standards", v: "Development of national population genetic databases, allele frequency distributions, and laboratory quality management to ISO 15189." },
+  { k: "Scholarly Record", v: "Extensive peer-reviewed publications in forensic DNA profiling, population genetics, and molecular diagnostic methodologies." },
+];
+
+export const mozumderRoute = [
+  { city: "Dhaka", years: "BSc & MSc", what: "Biochemistry, University of Dhaka — Honors and Master's foundation in biochemical genetics and analytical biochemistry" },
+  { city: "Forensic Lab", years: "NFDPL", what: "Senior Scientist and DNA Analyst, National Forensic DNA Profiling Laboratory, Dhaka Medical College" },
+  { city: "Clinical Lab", years: "DNA Solution", what: "Senior molecular diagnostic researcher, population genetics, hemoglobinopathy detection, and QF-PCR" },
+  { city: "Global", years: "AKAHELIX", what: "Co-Owner & Senior Forensic Geneticist, STR multiplexing, clinical validation, and laboratory quality assurance" },
+];
+
+export const ahamedCredentials = [
+  { k: "Education & Bioprocess Engineering", v: "PhD in Biotechnology & Bioprocess Engineering, Delft University of Technology (TU Delft), Netherlands; specialized in rational downstream bioprocess synthesis." },
+  { k: "Biopharma & Cell Therapy MSAT", v: "Senior MSAT (Manufacturing Science & Technology) and CMC development leader across cell and gene therapy, viral vectors, and biologics (Bristol Myers Squibb)." },
+  { k: "Quality-by-Design & Process Validation", v: "Quality-by-Design (QbD), process characterization, analytical comparability, and cGMP technology transfer for viral vectors and therapeutic proteins." },
+  { k: "Downstream & Vector Purification", v: "Expertise in downstream bioprocessing, chromatographic separation modeling, viral vector downstream purification, and protein phase behavior." },
+  { k: "Multimodal Biopharmaceutical Scope", v: "Experience spanning therapeutic proteins, viral gene therapy vectors, monoclonal antibodies, and antibody-drug conjugates." },
+  { k: "Scholarly Record", v: "Peer-reviewed publications in leading journals including the Journal of Chromatography A and Biophysical Journal on protein separation and bioprocess modeling." },
+];
+
+export const ahamedRoute = [
+  { city: "Delft", years: "PhD", what: "Biotechnology & Bioprocess Engineering, Delft University of Technology (TU Delft), Netherlands" },
+  { city: "Biotech / Pharma", years: "MSAT & CMC", what: "Bioprocess industrialization, Quality-by-Design (QbD), and downstream purification process development" },
+  { city: "Cell Therapy", years: "BMS", what: "Cell and gene therapy manufacturing science and viral vector process validation, Bristol Myers Squibb" },
+  { city: "Global", years: "AKAHELIX", what: "Co-Owner & Principal Scientist, bioprocess CMC development, viral vector manufacturing science, and analytical validation" },
+];
+
+export const arifCredentials = [
+  { k: "Board Certification & Fellowship", v: "Diplomate of the American Board of Medical Genetics and Genomics (ABMGG) in Clinical Molecular Genetics; Fellow of the American College of Medical Genetics and Genomics (FACMG)." },
+  { k: "Clinical Molecular Pathology Leadership", v: "Director of Molecular Pathology, Northwell Health / North Shore University Hospital; Assistant Professor at Donald and Barbara Zucker School of Medicine at Hofstra/Northwell." },
+  { k: "Doctoral & Postdoctoral Training", v: "PhD in Molecular Biology of Disease from Yokohama City University, Japan; Postdoctoral Fellow in Cytogenetics & Molecular Genetics at Icahn School of Medicine at Mount Sinai, New York." },
+  { k: "Neurodevelopmental & Human Genetics", v: "Investigator at the New York State Institute for Basic Research in Developmental Disabilities (IBR), specializing in exome analysis, spinocerebellar ataxia, and rare pediatric genetic syndromes." },
+  { k: "Core Diagnostic Specialization", v: "High-complexity clinical next-generation sequencing (NGS), ACMG variant classification, report sign-out oversight, and regulatory validation to CAP and NYSDOH standards." },
+  { k: "Scholarly Record & Impact", v: "Extensive peer-reviewed publications in PNAS, Journal of Biological Chemistry, and Cold Spring Harbor Molecular Case Studies across neurogenetics and tauopathies." },
+];
+
+export const arifRoute = [
+  { city: "Yokohama", years: "PhD", what: "Doctoral research in molecular biology of disease, Yokohama City University School of Medicine, Japan" },
+  { city: "New York", years: "Mount Sinai", what: "Clinical cytogenetics & molecular genetics postdoctoral fellow, Icahn School of Medicine at Mount Sinai" },
+  { city: "Staten Island", years: "IBR", what: "Research Scientist in neurochemistry & human genetics, NYS Institute for Basic Research in Developmental Disabilities" },
+  { city: "Manhasset", years: "Northwell", what: "Director of Molecular Pathology at Northwell Health / North Shore University Hospital and Assistant Professor at Zucker School of Medicine" },
+  { city: "Global", years: "AKAHELIX", what: "Co-Owner & Clinical Molecular Geneticist, ABMGG diagnostic oversight, ACMG variant interpretation, and lab validation" },
 ];
 
 export const teaching = [
