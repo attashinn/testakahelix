@@ -18,7 +18,7 @@ export function ServiceCards() {
       {homeServices.map((s, i) => (
         <FadeUp key={s.title} delay={(i % 2) * 0.08}>
           <Link
-            to="/services"
+            to={`/services/${s.slug}` as any}
             className="group flex h-full flex-col rounded-[4px] bg-paper p-6 text-ink transition-transform duration-700 ease-out-expo hover:-translate-y-1 md:p-8"
           >
             <div className="grid gap-4 md:grid-cols-[8.5rem_1fr]">
@@ -28,8 +28,12 @@ export function ServiceCards() {
                 {s.label}
               </span>
               <div>
-                <h3 className="text-[clamp(1.5rem,2.2vw,2rem)] leading-[1.08] tracking-[-0.04em]">{s.title}</h3>
-                <p className="mt-3 max-w-[44ch] text-[0.9375rem] leading-relaxed text-muted-foreground">{s.body}</p>
+                <h3 className="text-[clamp(1.5rem,2.2vw,2rem)] leading-[1.08] tracking-[-0.04em]">
+                  {s.title}
+                </h3>
+                <p className="mt-3 max-w-[44ch] text-[0.9375rem] leading-relaxed text-muted-foreground">
+                  {s.body}
+                </p>
               </div>
             </div>
 
@@ -41,7 +45,10 @@ export function ServiceCards() {
               <ArrowBox />
               <ul className="flex flex-wrap justify-end gap-1.5">
                 {s.tags.map((t) => (
-                  <li key={t} className="label-mono inline-flex items-center gap-1.5 rounded-[3px] bg-mist px-2 py-1">
+                  <li
+                    key={t}
+                    className="label-mono inline-flex items-center gap-1.5 rounded-[3px] bg-mist px-2 py-1"
+                  >
                     <span className="size-1.5 bg-mist-deep" />
                     {t}
                   </li>
@@ -86,9 +93,16 @@ function ServiceVisual({ kind }: { kind: Visual }) {
         />
       );
     case "binders":
-      return <Photo src={binders} alt="A row of quality manuals and SOP binders with blue index tabs" />;
+      return (
+        <Photo src={binders} alt="A row of quality manuals and SOP binders with blue index tabs" />
+      );
     case "spread":
-      return <Photo src={metaphase} alt="A spread of metaphase chromosomes, the basis of a karyotype report" />;
+      return (
+        <Photo
+          src={metaphase}
+          alt="A spread of metaphase chromosomes, the basis of a karyotype report"
+        />
+      );
   }
 }
 

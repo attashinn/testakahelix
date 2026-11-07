@@ -21,6 +21,8 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SignInRouteImport } from './routes/sign-in'
 import { Route as TrackRecordRouteImport } from './routes/track-record'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as ServicesIndexRouteImport } from './routes/services/index'
+import { Route as ServicesSlugRouteImport } from './routes/services/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -82,6 +84,16 @@ const ApiChatRoute = ApiChatRouteImport.update({
   path: '/api/chat',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesSlugRoute = ServicesSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ServicesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -92,10 +104,12 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/founder': typeof FounderRoute
   '/login': typeof LoginRoute
-  '/services': typeof ServicesRoute
+  '/services': typeof ServicesRouteWithChildren
   '/sign-in': typeof SignInRoute
   '/track-record': typeof TrackRecordRoute
   '/api/chat': typeof ApiChatRoute
+  '/services/$slug': typeof ServicesSlugRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -106,10 +120,11 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/founder': typeof FounderRoute
   '/login': typeof LoginRoute
-  '/services': typeof ServicesRoute
   '/sign-in': typeof SignInRoute
   '/track-record': typeof TrackRecordRoute
   '/api/chat': typeof ApiChatRoute
+  '/services/$slug': typeof ServicesSlugRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -121,10 +136,12 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/founder': typeof FounderRoute
   '/login': typeof LoginRoute
-  '/services': typeof ServicesRoute
+  '/services': typeof ServicesRouteWithChildren
   '/sign-in': typeof SignInRoute
   '/track-record': typeof TrackRecordRoute
   '/api/chat': typeof ApiChatRoute
+  '/services/$slug': typeof ServicesSlugRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -141,6 +158,8 @@ export interface FileRouteTypes {
     | '/sign-in'
     | '/track-record'
     | '/api/chat'
+    | '/services/$slug'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -151,10 +170,11 @@ export interface FileRouteTypes {
     | '/contact'
     | '/founder'
     | '/login'
-    | '/services'
     | '/sign-in'
     | '/track-record'
     | '/api/chat'
+    | '/services/$slug'
+    | '/services'
   id:
     | '__root__'
     | '/'
@@ -169,6 +189,8 @@ export interface FileRouteTypes {
     | '/sign-in'
     | '/track-record'
     | '/api/chat'
+    | '/services/$slug'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -180,7 +202,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FounderRoute: typeof FounderRoute
   LoginRoute: typeof LoginRoute
-  ServicesRoute: typeof ServicesRoute
+  ServicesRoute: typeof ServicesRouteWithChildren
   SignInRoute: typeof SignInRoute
   TrackRecordRoute: typeof TrackRecordRoute
   ApiChatRoute: typeof ApiChatRoute
@@ -272,8 +294,36 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiChatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/': {
+      id: '/services/'
+      path: '/'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/$slug': {
+      id: '/services/$slug'
+      path: '/$slug'
+      fullPath: '/services/$slug'
+      preLoaderRoute: typeof ServicesSlugRouteImport
+      parentRoute: typeof ServicesRoute
+    }
   }
 }
+
+interface ServicesRouteChildren {
+  ServicesSlugRoute: typeof ServicesSlugRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesSlugRoute: ServicesSlugRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -284,7 +334,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FounderRoute: FounderRoute,
   LoginRoute: LoginRoute,
-  ServicesRoute: ServicesRoute,
+  ServicesRoute: ServicesRouteWithChildren,
   SignInRoute: SignInRoute,
   TrackRecordRoute: TrackRecordRoute,
   ApiChatRoute: ApiChatRoute,
