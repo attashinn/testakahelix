@@ -13,6 +13,7 @@ import {
   MapPin,
   Microscope,
   ShieldCheck,
+  X,
 } from "@phosphor-icons/react";
 
 import {
@@ -37,12 +38,17 @@ export interface TrajectoryStation {
   department: string;
   appointment: string;
   focusTitle: string;
+  brief: string;
   scientificNarrative: string[];
   methodologies: string[];
   artifacts: string[];
   x: number;
   y: number;
-  labelPosition?: "top" | "bottom" | "left" | "right";
+  // Exact callout badge coordinates and leader line anchor
+  badgeX: number;
+  badgeY: number;
+  lineEndX: number;
+  lineEndY: number;
 }
 
 export const TRAJECTORY_STATIONS: TrajectoryStation[] = [
@@ -60,6 +66,8 @@ export const TRAJECTORY_STATIONS: TrajectoryStation[] = [
     department: "Faculty of Medicine, University of Dhaka",
     appointment: "MBBS (Doctor of Medicine equivalent) & Inpatient Clinical Resident",
     focusTitle: "Clinical Medicine, Pathophysiology & Endemic Hemoglobinopathies",
+    brief:
+      "Clinical medical training and inpatient hospital residency managing monogenic blood disorders (β-thalassemia and HbE variants) at one of Bangladesh's premier teaching hospitals.",
     scientificNarrative: [
       "Completed a rigorous 5-year clinical medical curriculum followed by a full 1-year inpatient hospital residency rotation across Internal Medicine, Pediatrics, Clinical Pathology, and Hematology at one of the country's largest tertiary academic hospitals.",
       "Managed high patient volumes presenting with severe monogenic blood disorders endemic to the region: β-thalassemia major, β-thalassemia minor/trait, and Hemoglobin E (HbE) hemoglobinopathy variants.",
@@ -79,7 +87,10 @@ export const TRAJECTORY_STATIONS: TrajectoryStation[] = [
     ],
     x: 751.1,
     y: 204.0,
-    labelPosition: "bottom",
+    badgeX: 685,
+    badgeY: 168,
+    lineEndX: 725,
+    lineEndY: 182,
   },
   {
     id: "bangkok",
@@ -95,6 +106,8 @@ export const TRAJECTORY_STATIONS: TrajectoryStation[] = [
     department: "School of Advanced Technologies · Bioprocess Technology Program",
     appointment: "Master of Science (MSc) Candidate & Graduate Researcher",
     focusTitle: "Biochemical Separation, Chromatography & Bio-Analytical Instrumentation",
+    brief:
+      "Advanced postgraduate training in macromolecular separation, liquid chromatography (HPLC/FPLC), and statistical quality control.",
     scientificNarrative: [
       "Bridged bedside medicine with engineering and biochemical physics, undertaking advanced postgraduate training in macromolecular separation, enzyme kinetics, and downstream bioprocess modeling.",
       "Specialized in high-resolution liquid chromatography, operating and calibrating HPLC and FPLC systems for the selective purification and fractionation of nucleic acids and functional proteins.",
@@ -114,7 +127,10 @@ export const TRAJECTORY_STATIONS: TrajectoryStation[] = [
     ],
     x: 779.2,
     y: 223.7,
-    labelPosition: "bottom",
+    badgeX: 805,
+    badgeY: 252,
+    lineEndX: 792,
+    lineEndY: 242,
   },
   {
     id: "leuven",
@@ -130,6 +146,8 @@ export const TRAJECTORY_STATIONS: TrajectoryStation[] = [
     department: "Center for Human Genetics (Centrum Menselijke Erfelijkheid)",
     appointment: "Doctor of Philosophy (PhD) in Human Genetics",
     focusTitle: "Epithelial Sodium Channel (ENaC) Genomics & Cystic Fibrosis-like Disease",
+    brief:
+      "Doctoral research at KU Leuven's Center for Human Genetics; discovered ENaC mutations causing airway surface liquid dehydration in non-CFTR bronchiectasis.",
     scientificNarrative: [
       "Completed five years of intensive doctoral research at KU Leuven's renowned Center for Human Genetics, investigating the molecular genetics and ion transport physiology of the Epithelial Sodium Channel (ENaC) genes (SCNN1A, SCNN1B, and SCNN1G).",
       "Investigated European patient cohorts presenting with classic cystic fibrosis symptoms (bronchiectasis, chronic Pseudomonas colonization, elevated sweat chloride) who tested negative for pathogenic CFTR mutations.",
@@ -152,7 +170,10 @@ export const TRAJECTORY_STATIONS: TrajectoryStation[] = [
     ],
     x: 513.1,
     y: 144.2,
-    labelPosition: "top",
+    badgeX: 475,
+    badgeY: 108,
+    lineEndX: 500,
+    lineEndY: 124,
   },
   {
     id: "toronto",
@@ -168,6 +189,8 @@ export const TRAJECTORY_STATIONS: TrajectoryStation[] = [
     department: "Department of Medical Biophysics, University of Toronto",
     appointment: "CIHR Postdoctoral Research Fellow in Cancer Genetics & Genomic Instability",
     focusTitle: "Somatic Copy Number Alterations, Genomic Instability & Cancer Genomics",
+    brief:
+      "CIHR competitive fellowship at Princess Margaret Cancer Centre; characterized copy number alterations, DNA repair deficiencies, and cancer biomarker signatures.",
     scientificNarrative: [
       "Awarded a prestigious, competitive postdoctoral research fellowship by the Canadian Institutes of Health Research (CIHR) to conduct translational cancer genomics at Princess Margaret Cancer Centre—one of the top 5 oncology research institutes in the world.",
       "Investigated the molecular mechanisms of chromosomal instability (CIN), DNA double-strand break repair deficiencies, and somatic copy number alterations (SCNAs) across primary patient tumor cohorts.",
@@ -190,7 +213,10 @@ export const TRAJECTORY_STATIONS: TrajectoryStation[] = [
     ],
     x: 279.5,
     y: 161.5,
-    labelPosition: "left",
+    badgeX: 218,
+    badgeY: 125,
+    lineEndX: 255,
+    lineEndY: 142,
   },
   {
     id: "houston",
@@ -206,6 +232,8 @@ export const TRAJECTORY_STATIONS: TrajectoryStation[] = [
     department: "Division of Pathology and Laboratory Medicine · Department of Molecular Oncology",
     appointment: "Research Scientist in Molecular Oncology & Precision Diagnostics",
     focusTitle: "Precision Oncology Panels, FFPE Low-Input NGS & Clinical Trial Biomarkers",
+    brief:
+      "Translational cancer genomics at MD Anderson; engineered low-input FFPE hybrid-capture NGS gene panels for targeted precision oncology trials.",
     scientificNarrative: [
       "Conducted translational molecular oncology research at the nation's #1 cancer hospital (MD Anderson Cancer Center, Texas Medical Center, Houston), evaluating molecular tumor markers for clinical trial patient stratification.",
       "Engineered and validated high-throughput targeted NGS hybrid-capture gene panels optimized for challenging, low-input formalin-fixed paraffin-embedded (FFPE) patient biopsies.",
@@ -227,7 +255,10 @@ export const TRAJECTORY_STATIONS: TrajectoryStation[] = [
     ],
     x: 235.1,
     y: 191.8,
-    labelPosition: "bottom",
+    badgeX: 172,
+    badgeY: 228,
+    lineEndX: 212,
+    lineEndY: 212,
   },
   {
     id: "new-york",
@@ -243,6 +274,8 @@ export const TRAJECTORY_STATIONS: TrajectoryStation[] = [
     department: "Department of Pathology · Division of Molecular Pathology",
     appointment: "Assistant Professor of Pathology · Technical Laboratory Director · CAP Inspector · Founder & CEO",
     focusTitle: "Dual LGG Directorship, 14 NYSDOH LDT Submissions, CAP Inspection & AKAHELIX",
+    brief:
+      "ABMGG Laboratory Genetics and Genomics fellowship; 3 NYS CQ permits; 14 NYSDOH LDT packages; active CAP Inspector; author of Genetic Blueprint; Founder & CEO.",
     scientificNarrative: [
       "Completed the rigorous, dual ACGME/ABMGG-accredited Fellowship in Laboratory Genetics and Genomics (LGG) (2017–2020) at Albert Einstein College of Medicine and Montefiore Medical Center, achieving clinical mastery in both cytogenetics and molecular diagnostics.",
       "Appointed Assistant Professor of Pathology at Einstein and Technical Director of Molecular Pathology; awarded New York State Department of Health (NYSDOH) Certificate of Qualification (CQ) technical directorships in Cytogenetics, Genetic Testing (Molecular), and Oncology.",
@@ -268,21 +301,26 @@ export const TRAJECTORY_STATIONS: TrajectoryStation[] = [
     ],
     x: 294.4,
     y: 168.2,
-    labelPosition: "right",
+    badgeX: 320,
+    badgeY: 155,
+    lineEndX: 308,
+    lineEndY: 162,
   },
 ];
 
-// Flight arcs connecting stations sequentially
+// Clean connecting flight arcs across the globe
 const FLIGHT_ARCS = [
-  { from: TRAJECTORY_STATIONS[0], to: TRAJECTORY_STATIONS[1], curve: -15 }, // Dhaka -> Bangkok
-  { from: TRAJECTORY_STATIONS[1], to: TRAJECTORY_STATIONS[2], curve: -60 }, // Bangkok -> Leuven
-  { from: TRAJECTORY_STATIONS[2], to: TRAJECTORY_STATIONS[3], curve: -70 }, // Leuven -> Toronto
-  { from: TRAJECTORY_STATIONS[3], to: TRAJECTORY_STATIONS[4], curve: -25 }, // Toronto -> Houston
-  { from: TRAJECTORY_STATIONS[4], to: TRAJECTORY_STATIONS[5], curve: -20 }, // Houston -> New York
+  { from: TRAJECTORY_STATIONS[0]!, to: TRAJECTORY_STATIONS[1]!, curve: -12 }, // Dhaka -> Bangkok
+  { from: TRAJECTORY_STATIONS[1]!, to: TRAJECTORY_STATIONS[2]!, curve: -55 }, // Bangkok -> Leuven
+  { from: TRAJECTORY_STATIONS[2]!, to: TRAJECTORY_STATIONS[3]!, curve: -65 }, // Leuven -> Toronto
+  { from: TRAJECTORY_STATIONS[3]!, to: TRAJECTORY_STATIONS[4]!, curve: -20 }, // Toronto -> Houston
+  { from: TRAJECTORY_STATIONS[4]!, to: TRAJECTORY_STATIONS[5]!, curve: -15 }, // Houston -> New York
 ];
 
 export function TrajectoryMap() {
-  const [activeId, setActiveId] = useState<string>("new-york");
+  const [activeId, setActiveId] = useState<string>("bangkok");
+  const [showPopup, setShowPopup] = useState<boolean>(true);
+
   const activeStation =
     TRAJECTORY_STATIONS.find((s) => s.id === activeId) || TRAJECTORY_STATIONS[0]!;
 
@@ -293,6 +331,18 @@ export function TrajectoryMap() {
     currentIndex < TRAJECTORY_STATIONS.length - 1
       ? TRAJECTORY_STATIONS[currentIndex + 1]
       : null;
+
+  const handleSelectStation = (id: string) => {
+    setActiveId(id);
+    setShowPopup(true);
+  };
+
+  const scrollToDossier = () => {
+    const el = document.getElementById("station-dossier-card");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <div className="w-full">
@@ -306,66 +356,53 @@ export function TrajectoryMap() {
               GLOBAL SCIENTIFIC & CLINICAL TRAJECTORY
             </span>
             <span className="label-mono hidden sm:inline text-xs text-muted-foreground">
-              · 6 Academic & Diagnostic Stations
+              · 6 Career Stations Across 5 Nations
             </span>
           </div>
 
           <div className="flex items-center gap-2">
             <span className="label-mono text-[0.6875rem] text-muted-foreground">
-              CLICK ANY POINT TO INSPECT
+              CLICK ANY PIN OR COUNTRY
             </span>
-            <div className="label-mono text-xs bg-paper border border-border px-2.5 py-0.5 rounded text-blue font-medium">
+            <div className="label-mono text-xs bg-paper border border-border px-2.5 py-0.5 rounded text-blue font-semibold">
               {activeStation.stepNumber} / 06 · {activeStation.city}
             </div>
           </div>
         </div>
 
         {/* Vector SVG World Map Canvas */}
-        <div className="relative w-full aspect-[2/1] min-h-[320px] max-h-[560px] bg-[#fbfcfd] dark:bg-[#0c1017] select-none">
+        <div className="relative w-full aspect-[2/1] min-h-[360px] max-h-[580px] bg-[#f8fafc] dark:bg-[#090d16] select-none">
           <svg
             viewBox={`0 0 ${WORLD_MAP_WIDTH} ${WORLD_MAP_HEIGHT}`}
             className="w-full h-full block"
-            aria-label="Interactive world map of Dr. Abul Kalam Azad's clinical and academic training trajectory"
+            aria-label="Interactive world map showing Dr. Abul Kalam Azad's global career path"
           >
             <defs>
-              {/* Subtle map background grid pattern */}
+              {/* Crisp background grid */}
               <pattern
-                id="mapGrid"
-                width="40"
-                height="40"
+                id="clinicalGrid"
+                width="50"
+                height="50"
                 patternUnits="userSpaceOnUse"
               >
                 <path
-                  d="M 40 0 L 0 0 0 40"
+                  d="M 50 0 L 0 0 0 50"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="0.5"
-                  className="text-border/30 dark:text-border/15"
+                  className="text-border/40 dark:text-border/20"
                 />
               </pattern>
-
-              {/* Glowing gradient for flight arcs */}
-              <linearGradient
-                id="arcGlow"
-                x1="0%"
-                y1="0%"
-                x2="100%"
-                y2="100%"
-              >
-                <stop offset="0%" stopColor="#2563eb" stopOpacity="0.4" />
-                <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.9" />
-                <stop offset="100%" stopColor="#2563eb" stopOpacity="0.4" />
-              </linearGradient>
             </defs>
 
             {/* Grid background */}
             <rect
               width={WORLD_MAP_WIDTH}
               height={WORLD_MAP_HEIGHT}
-              fill="url(#mapGrid)"
+              fill="url(#clinicalGrid)"
             />
 
-            {/* Latitude / Longitude hairline reference graticules */}
+            {/* Equator & Prime Meridian reference lines */}
             <line
               x1="0"
               y1="250"
@@ -374,7 +411,7 @@ export function TrajectoryMap() {
               stroke="currentColor"
               strokeWidth="0.75"
               strokeDasharray="4 4"
-              className="text-border/50 dark:text-border/30"
+              className="text-border/60 dark:text-border/40"
             />
             <line
               x1="500"
@@ -384,43 +421,48 @@ export function TrajectoryMap() {
               stroke="currentColor"
               strokeWidth="0.75"
               strokeDasharray="4 4"
-              className="text-border/50 dark:text-border/30"
+              className="text-border/60 dark:text-border/40"
             />
 
-            {/* World Landmass Base Outline */}
+            {/* All World Continents - HIGH CONTRAST & CLEAR VISIBILITY */}
             <path
               d={WORLD_LAND_PATH}
-              fill="currentColor"
-              stroke="currentColor"
-              strokeWidth="0.75"
+              fill="#e2e8f0"
+              stroke="#cbd5e1"
+              strokeWidth="0.8"
               strokeLinejoin="round"
-              className="text-mist-deep/45 dark:text-muted/15"
+              className="dark:fill-[#1e293b] dark:stroke-[#334155] transition-colors"
             />
 
-            {/* Featured Countries: Bangladesh, Thailand, Belgium, Canada, USA */}
+            {/* Highlighted Countries: Bangladesh, Thailand, Belgium, Canada, USA */}
             {Object.entries(FEATURED_COUNTRY_PATHS).map(([iso, path]) => {
-              const isSelectedCountry = activeStation.iso === iso;
+              const isSelected = activeStation.iso === iso;
               return (
                 <path
                   key={iso}
                   d={path}
-                  fill="currentColor"
-                  stroke="currentColor"
-                  strokeWidth={isSelectedCountry ? "1.5" : "0.75"}
+                  fill={isSelected ? "#bfdbfe" : "#dbeafe"}
+                  stroke={isSelected ? "#2563eb" : "#3b82f6"}
+                  strokeWidth={isSelected ? "1.8" : "1.0"}
+                  strokeLinejoin="round"
                   className={cn(
-                    "transition-all duration-300",
-                    isSelectedCountry
-                      ? "text-blue/20 stroke-blue dark:text-blue/30"
-                      : "text-blue/8 stroke-blue/40 hover:text-blue/15",
+                    "cursor-pointer transition-all duration-300",
+                    isSelected
+                      ? "dark:fill-[#1d4ed8]/50 dark:stroke-[#60a5fa]"
+                      : "dark:fill-[#1e3a8a]/30 dark:stroke-[#3b82f6]/70 hover:fill-[#bfdbfe]",
                   )}
-                />
+                  onClick={() => {
+                    const st = TRAJECTORY_STATIONS.find((s) => s.iso === iso);
+                    if (st) handleSelectStation(st.id);
+                  }}
+                >
+                  <title>{`Country: ${iso}`}</title>
+                </path>
               );
             })}
 
-            {/* Curved Flight Trajectory Arcs */}
+            {/* Connecting Flight Arcs */}
             {FLIGHT_ARCS.map((arc, i) => {
-              const dx = arc.to.x - arc.from.x;
-              const dy = arc.to.y - arc.from.y;
               const midX = (arc.from.x + arc.to.x) / 2;
               const midY = (arc.from.y + arc.to.y) / 2 + arc.curve;
               const pathD = `M ${arc.from.x} ${arc.from.y} Q ${midX} ${midY} ${arc.to.x} ${arc.to.y}`;
@@ -429,34 +471,28 @@ export function TrajectoryMap() {
                 arc.from.id === activeId || arc.to.id === activeId;
 
               return (
-                <g key={`arc-${i}`}>
-                  {/* Subtle backdrop line */}
-                  <path
-                    d={pathD}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.2"
-                    strokeDasharray="3 3"
-                    className={cn(
-                      "transition-all duration-300",
-                      isArcActive
-                        ? "text-blue stroke-blue"
-                        : "text-border/80 dark:text-border/60",
-                    )}
-                  />
-                </g>
+                <path
+                  key={`arc-${i}`}
+                  d={pathD}
+                  fill="none"
+                  stroke={isArcActive ? "#2563eb" : "#64748b"}
+                  strokeWidth={isArcActive ? "2.2" : "1.2"}
+                  strokeDasharray={isArcActive ? "none" : "3 3"}
+                  strokeOpacity={isArcActive ? "0.95" : "0.45"}
+                  className="transition-all duration-300 pointer-events-none"
+                />
               );
             })}
 
-            {/* Interactive Location Points */}
+            {/* Non-overlapping Leader Lines and Badges for Each Station */}
             {TRAJECTORY_STATIONS.map((station) => {
               const isSelected = station.id === activeId;
 
               return (
                 <g
-                  key={station.id}
+                  key={`badge-${station.id}`}
                   className="cursor-pointer group"
-                  onClick={() => setActiveId(station.id)}
+                  onClick={() => handleSelectStation(station.id)}
                   tabIndex={0}
                   role="button"
                   aria-pressed={isSelected}
@@ -464,11 +500,70 @@ export function TrajectoryMap() {
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
                       e.preventDefault();
-                      setActiveId(station.id);
+                      handleSelectStation(station.id);
                     }
                   }}
                 >
-                  {/* Outer pulse wave on selected point */}
+                  {/* Hairline Leader Line connecting point to label */}
+                  <line
+                    x1={station.x}
+                    y1={station.y}
+                    x2={station.lineEndX}
+                    y2={station.lineEndY}
+                    stroke={isSelected ? "#2563eb" : "#94a3b8"}
+                    strokeWidth={isSelected ? "1.5" : "0.9"}
+                    strokeDasharray={isSelected ? "none" : "2 2"}
+                    className="transition-colors"
+                  />
+
+                  {/* Leader line joint dot */}
+                  <circle
+                    cx={station.lineEndX}
+                    cy={station.lineEndY}
+                    r={isSelected ? "2.5" : "1.8"}
+                    fill={isSelected ? "#2563eb" : "#94a3b8"}
+                  />
+
+                  {/* Callout Pill Background */}
+                  <rect
+                    x={station.badgeX}
+                    y={station.badgeY}
+                    width={station.city.length * 6.5 + 46}
+                    height="20"
+                    rx="3"
+                    fill={isSelected ? "#2563eb" : "#ffffff"}
+                    stroke={isSelected ? "#2563eb" : "#94a3b8"}
+                    strokeWidth={isSelected ? "1.5" : "1.0"}
+                    className="shadow-sm transition-all duration-200 group-hover:stroke-blue"
+                  />
+
+                  {/* Pill Text */}
+                  <text
+                    x={station.badgeX + 6}
+                    y={station.badgeY + 13.5}
+                    fontSize="9.5"
+                    fontFamily="var(--font-mono, monospace)"
+                    fontWeight={isSelected ? "700" : "500"}
+                    fill={isSelected ? "#ffffff" : "#0f172a"}
+                    className="select-none pointer-events-none"
+                  >
+                    {station.stepNumber} {station.city} {station.flag}
+                  </text>
+                </g>
+              );
+            })}
+
+            {/* Coordinate Pins on Top of Land */}
+            {TRAJECTORY_STATIONS.map((station) => {
+              const isSelected = station.id === activeId;
+
+              return (
+                <g
+                  key={`pin-${station.id}`}
+                  className="cursor-pointer group"
+                  onClick={() => handleSelectStation(station.id)}
+                >
+                  {/* Outer pulse wave */}
                   {isSelected && (
                     <circle
                       cx={station.x}
@@ -476,8 +571,8 @@ export function TrajectoryMap() {
                       r="16"
                       fill="none"
                       stroke="#2563eb"
-                      strokeWidth="1.5"
-                      strokeOpacity="0.4"
+                      strokeWidth="1.6"
+                      strokeOpacity="0.5"
                       className="animate-ping"
                     />
                   )}
@@ -486,11 +581,11 @@ export function TrajectoryMap() {
                   <circle
                     cx={station.x}
                     cy={station.y}
-                    r={isSelected ? "11" : "8"}
+                    r={isSelected ? "10" : "7"}
                     fill={isSelected ? "#2563eb" : "#ffffff"}
-                    fillOpacity={isSelected ? "0.2" : "0.85"}
-                    stroke={isSelected ? "#2563eb" : "#64748b"}
-                    strokeWidth={isSelected ? "1.8" : "1.2"}
+                    fillOpacity={isSelected ? "0.25" : "0.95"}
+                    stroke={isSelected ? "#2563eb" : "#475569"}
+                    strokeWidth={isSelected ? "2" : "1.2"}
                     className="transition-all duration-200 group-hover:scale-125"
                   />
 
@@ -498,67 +593,134 @@ export function TrajectoryMap() {
                   <circle
                     cx={station.x}
                     cy={station.y}
-                    r={isSelected ? "5" : "3.5"}
+                    r={isSelected ? "4.5" : "3"}
                     fill={isSelected ? "#2563eb" : "#0f172a"}
                     stroke="#ffffff"
                     strokeWidth="1.5"
-                    className="transition-all duration-200 shadow-sm"
                   />
-
-                  {/* Station Label Badge */}
-                  <g
-                    transform={`translate(${
-                      station.labelPosition === "left"
-                        ? station.x - 10
-                        : station.labelPosition === "right"
-                        ? station.x + 10
-                        : station.x
-                    }, ${
-                      station.labelPosition === "top"
-                        ? station.y - 12
-                        : station.labelPosition === "bottom"
-                        ? station.y + 16
-                        : station.y + 3
-                    })`}
-                    className={cn(
-                      "transition-opacity duration-200",
-                      isSelected
-                        ? "opacity-100"
-                        : "opacity-80 group-hover:opacity-100",
-                    )}
-                  >
-                    <text
-                      textAnchor={
-                        station.labelPosition === "left"
-                          ? "end"
-                          : station.labelPosition === "right"
-                          ? "start"
-                          : "middle"
-                      }
-                      fontSize="9.5"
-                      fontFamily="var(--font-mono, monospace)"
-                      fontWeight={isSelected ? "600" : "500"}
-                      fill={isSelected ? "#2563eb" : "currentColor"}
-                      className="text-foreground select-none"
-                    >
-                      {station.stepNumber} {station.city}
-                    </text>
-                  </g>
                 </g>
               );
             })}
           </svg>
 
+          {/* Floating On-Map Inspection Specimen Card (Desktop / Tablet) */}
+          {showPopup && (
+            <div className="hidden sm:block absolute bottom-12 left-4 md:left-6 max-w-[340px] sm:max-w-[380px] rounded-[4px] border border-border bg-paper/95 p-4 shadow-lg backdrop-blur-md animate-in fade-in slide-in-from-bottom-2 duration-200 z-10">
+              <div className="flex items-start justify-between gap-3 pb-2.5 border-b border-border/70">
+                <div className="flex items-center gap-2">
+                  <span className="label-mono text-[0.6875rem] font-bold text-on-blue bg-blue px-2 py-0.5 rounded">
+                    {activeStation.stepNumber}
+                  </span>
+                  <p className="font-display font-semibold text-sm text-foreground">
+                    {activeStation.city}, {activeStation.country} {activeStation.flag}
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setShowPopup(false)}
+                  className="text-muted-foreground hover:text-foreground p-0.5 rounded transition-colors"
+                  aria-label="Close station summary"
+                >
+                  <X className="size-4" />
+                </button>
+              </div>
+
+              <div className="mt-2.5 space-y-1">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="label-mono text-muted-foreground">PERIOD</span>
+                  <span className="font-mono font-medium text-foreground">{activeStation.years}</span>
+                </div>
+                <div className="flex items-center justify-between text-xs">
+                  <span className="label-mono text-muted-foreground">DEGREE / ROLE</span>
+                  <span className="font-medium text-blue text-right truncate max-w-[200px]">
+                    {activeStation.appointment.split("&")[0]}
+                  </span>
+                </div>
+                <div className="pt-1 text-xs text-muted-foreground leading-relaxed">
+                  {activeStation.brief}
+                </div>
+              </div>
+
+              <div className="mt-3 pt-2.5 border-t border-border/60 flex items-center justify-between">
+                <span className="label-mono text-[0.625rem] text-muted-foreground">
+                  {activeStation.methodologies.length} VALIDATED METHODS
+                </span>
+                <button
+                  type="button"
+                  onClick={scrollToDossier}
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-blue hover:underline cursor-pointer"
+                >
+                  <span>Open Full Record</span>
+                  <ArrowRight className="size-3" />
+                </button>
+              </div>
+            </div>
+          )}
+
           {/* Map Compass Rose / Legend Stamp */}
-          <div className="absolute bottom-3 left-4 hidden sm:flex items-center gap-2 label-mono text-[0.625rem] text-muted-foreground bg-paper/85 backdrop-blur-sm px-2.5 py-1 rounded border border-border/80">
+          <div className="absolute bottom-3 left-4 hidden sm:flex items-center gap-2 label-mono text-[0.625rem] text-muted-foreground bg-paper/90 backdrop-blur-sm px-2.5 py-1 rounded border border-border/80">
             <Compass className="size-3.5 text-blue" />
             <span>Natural Earth / Miller Cylindrical Projection</span>
           </div>
 
-          <div className="absolute bottom-3 right-4 label-mono text-[0.625rem] text-muted-foreground bg-paper/85 backdrop-blur-sm px-2.5 py-1 rounded border border-border/80">
-            <span>Click any node to expand clinical record</span>
+          <div className="absolute bottom-3 right-4 label-mono text-[0.625rem] text-muted-foreground bg-paper/90 backdrop-blur-sm px-2.5 py-1 rounded border border-border/80">
+            <span>Click any node or country to inspect</span>
           </div>
         </div>
+
+        {/* Mobile Inspection Card (displayed inline below map so mobile map remains visible) */}
+        {showPopup && (
+          <div className="sm:hidden border-t border-border bg-paper p-4 animate-in fade-in duration-200">
+            <div className="flex items-start justify-between gap-3 pb-2 border-b border-border/70">
+              <div className="flex items-center gap-2">
+                <span className="label-mono text-[0.6875rem] font-bold text-on-blue bg-blue px-2 py-0.5 rounded">
+                  {activeStation.stepNumber}
+                </span>
+                <p className="font-display font-semibold text-sm text-foreground">
+                  {activeStation.city}, {activeStation.country} {activeStation.flag}
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowPopup(false)}
+                className="text-muted-foreground hover:text-foreground p-0.5 rounded transition-colors"
+                aria-label="Close station summary"
+              >
+                <X className="size-4" />
+              </button>
+            </div>
+
+            <div className="mt-2 space-y-1">
+              <div className="flex items-center justify-between text-xs">
+                <span className="label-mono text-muted-foreground">PERIOD</span>
+                <span className="font-mono font-medium text-foreground">{activeStation.years}</span>
+              </div>
+              <div className="flex items-center justify-between text-xs">
+                <span className="label-mono text-muted-foreground">DEGREE / ROLE</span>
+                <span className="font-medium text-blue text-right truncate max-w-[200px]">
+                  {activeStation.appointment.split("&")[0]}
+                </span>
+              </div>
+              <div className="pt-1 text-xs text-muted-foreground leading-relaxed">
+                {activeStation.brief}
+              </div>
+            </div>
+
+            <div className="mt-3 pt-2 border-t border-border/60 flex items-center justify-between">
+              <span className="label-mono text-[0.625rem] text-muted-foreground">
+                {activeStation.methodologies.length} VALIDATED METHODS
+              </span>
+              <button
+                type="button"
+                onClick={scrollToDossier}
+                className="inline-flex items-center gap-1 text-xs font-semibold text-blue hover:underline cursor-pointer"
+              >
+                <span>Open Full Record</span>
+                <ArrowRight className="size-3" />
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* ---------------- HORIZONTAL STEPPER SELECTOR ---------------- */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 border-t border-border bg-mist/30">
@@ -568,7 +730,7 @@ export function TrajectoryMap() {
               <button
                 key={station.id}
                 type="button"
-                onClick={() => setActiveId(station.id)}
+                onClick={() => handleSelectStation(station.id)}
                 className={cn(
                   "p-3.5 text-left transition-all duration-200 border-r last:border-r-0 border-b lg:border-b-0 border-border/80 flex flex-col justify-between cursor-pointer",
                   isSelected
@@ -607,7 +769,10 @@ export function TrajectoryMap() {
       </div>
 
       {/* ---------------- EXPANDABLE IN-DEPTH DOSSIER PANEL ---------------- */}
-      <div className="mt-6 chamfer border border-border bg-paper p-6 md:p-10 shadow-sm relative animate-in fade-in duration-300">
+      <div
+        id="station-dossier-card"
+        className="mt-6 chamfer border border-border bg-paper p-6 md:p-10 shadow-sm relative animate-in fade-in duration-300"
+      >
         {/* Top Header of the Selected Station */}
         <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 pb-6 border-b border-border">
           <div>
@@ -637,7 +802,7 @@ export function TrajectoryMap() {
             {prevStation && (
               <button
                 type="button"
-                onClick={() => setActiveId(prevStation.id)}
+                onClick={() => handleSelectStation(prevStation.id)}
                 className="inline-flex items-center gap-1.5 rounded-[3px] border border-border bg-mist px-3 py-1.5 text-xs font-medium text-foreground transition-colors hover:border-blue hover:text-blue cursor-pointer"
               >
                 <ArrowLeft className="size-3.5" />
@@ -648,7 +813,7 @@ export function TrajectoryMap() {
             {nextStation && (
               <button
                 type="button"
-                onClick={() => setActiveId(nextStation.id)}
+                onClick={() => handleSelectStation(nextStation.id)}
                 className="inline-flex items-center gap-1.5 rounded-[3px] bg-blue px-3.5 py-1.5 text-xs font-medium text-on-blue transition-colors hover:bg-blue-deep cursor-pointer"
               >
                 <span>Next: {nextStation.city}</span>
