@@ -7,6 +7,7 @@ import { company, nav } from "@/content/site";
 import { cn } from "@/lib/utils";
 
 import { Cta } from "./Cta";
+import { ChromosomeStrip } from "./ChromosomeStrip";
 import { EASE } from "./motion";
 import { Wordmark } from "./Wordmark";
 
@@ -57,12 +58,15 @@ export function Header() {
         transition={{ duration: 0.5, ease: EASE }}
       >
         <div className={cn("container-x pt-2 transition-opacity", open && "opacity-0")} aria-hidden>
-          <div className="ticks text-foreground" />
+          <ChromosomeStrip className="text-foreground" />
         </div>
         <div className="container-x flex h-14 items-center justify-between md:h-16">
           <Link
             to="/"
-            className={cn("relative z-10 transition-colors", open ? "text-on-blue" : "text-foreground")}
+            className={cn(
+              "relative z-10 transition-colors",
+              open ? "text-on-blue" : "text-foreground",
+            )}
             aria-label="AKAHELIX home"
           >
             <Wordmark />
@@ -87,7 +91,12 @@ export function Header() {
             >
               Sign In
             </Link>
-            <Cta to="/contact" variant="outline" size="md" className="h-10 pl-4 pr-1 text-[0.8125rem] [&>span:last-child]:size-8">
+            <Cta
+              to="/contact"
+              variant="outline"
+              size="md"
+              className="h-10 pl-4 pr-1 text-[0.8125rem] [&>span:last-child]:size-8"
+            >
               Contact us
             </Cta>
           </div>
@@ -117,22 +126,25 @@ export function Header() {
             transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
           >
             <nav className="flex flex-col" aria-label="Mobile">
-              {[{ to: "/" as const, label: "Home" }, ...nav, { to: "/contact" as const, label: "Contact" }, { to: "/sign-in" as const, label: "Sign in" }].map(
-                (item, i) => (
-                  <div key={item.to} className="overflow-hidden border-b border-on-blue-line">
-                    <motion.div
-                      initial={{ y: "100%" }}
-                      animate={{ y: "0%" }}
-                      transition={{ duration: 0.8, ease: EASE, delay: 0.25 + i * 0.05 }}
-                    >
-                      <Link to={item.to} className="flex items-baseline justify-between py-4">
-                        <span className="font-display text-4xl tracking-[-0.04em]">{item.label}</span>
-                        <span className="label-mono text-on-blue-muted">0{i + 1}</span>
-                      </Link>
-                    </motion.div>
-                  </div>
-                ),
-              )}
+              {[
+                { to: "/" as const, label: "Home" },
+                ...nav,
+                { to: "/contact" as const, label: "Contact" },
+                { to: "/sign-in" as const, label: "Sign in" },
+              ].map((item, i) => (
+                <div key={item.to} className="overflow-hidden border-b border-on-blue-line">
+                  <motion.div
+                    initial={{ y: "100%" }}
+                    animate={{ y: "0%" }}
+                    transition={{ duration: 0.8, ease: EASE, delay: 0.25 + i * 0.05 }}
+                  >
+                    <Link to={item.to} className="flex items-baseline justify-between py-4">
+                      <span className="font-display text-4xl tracking-[-0.04em]">{item.label}</span>
+                      <span className="label-mono text-on-blue-muted">0{i + 1}</span>
+                    </Link>
+                  </motion.div>
+                </div>
+              ))}
             </nav>
             <motion.div
               initial={{ opacity: 0 }}
