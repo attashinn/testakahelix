@@ -418,7 +418,7 @@ function Founder() {
         </FadeUp>
 
         <FadeUp delay={0.05}>
-          <Link to="/founder" className="group chamfer block bg-mist h-full">
+          <Link to="/leadership" className="group chamfer block bg-mist h-full">
             <div className="relative aspect-[4/5] overflow-hidden">
               <img
                 src={abuSufianPortrait}
@@ -439,7 +439,7 @@ function Founder() {
         </FadeUp>
 
         <FadeUp delay={0.1}>
-          <Link to="/founder" className="group chamfer block bg-mist h-full">
+          <Link to="/leadership" className="group chamfer block bg-mist h-full">
             <div className="relative aspect-[4/5] overflow-hidden">
               <img
                 src={rafulAlamPortrait}
@@ -460,7 +460,7 @@ function Founder() {
         </FadeUp>
 
         <FadeUp delay={0.15}>
-          <Link to="/founder" className="group chamfer block bg-mist h-full">
+          <Link to="/leadership" className="group chamfer block bg-mist h-full">
             <div className="relative aspect-[4/5] overflow-hidden">
               <img
                 src={badrulAnamPortrait}
@@ -481,7 +481,7 @@ function Founder() {
         </FadeUp>
 
         <FadeUp delay={0.2}>
-          <Link to="/founder" className="group chamfer block bg-mist h-full">
+          <Link to="/leadership" className="group chamfer block bg-mist h-full">
             <div className="relative aspect-[4/5] overflow-hidden">
               <img
                 src={abedulHaquePortrait}
@@ -502,7 +502,7 @@ function Founder() {
         </FadeUp>
 
         <FadeUp delay={0.25}>
-          <Link to="/founder" className="group chamfer block bg-mist h-full">
+          <Link to="/leadership" className="group chamfer block bg-mist h-full">
             <div className="relative aspect-[4/5] overflow-hidden">
               <img
                 src={belayatPortrait}
@@ -523,7 +523,7 @@ function Founder() {
         </FadeUp>
 
         <FadeUp delay={0.3}>
-          <Link to="/founder" className="group chamfer block bg-mist h-full">
+          <Link to="/leadership" className="group chamfer block bg-mist h-full">
             <div className="relative aspect-[4/5] overflow-hidden">
               <img
                 src={mozumderPortrait}
@@ -544,7 +544,7 @@ function Founder() {
         </FadeUp>
 
         <FadeUp delay={0.35}>
-          <Link to="/founder" className="group chamfer block bg-mist h-full">
+          <Link to="/leadership" className="group chamfer block bg-mist h-full">
             <div className="relative aspect-[4/5] overflow-hidden">
               <img
                 src={tangirPortrait}
@@ -565,7 +565,7 @@ function Founder() {
         </FadeUp>
 
         <FadeUp delay={0.4}>
-          <Link to="/founder" className="group chamfer block bg-mist h-full">
+          <Link to="/leadership" className="group chamfer block bg-mist h-full">
             <div className="relative aspect-[4/5] overflow-hidden">
               <img
                 src={arifPortrait}
@@ -606,8 +606,9 @@ function Founder() {
             ))}
           </dl>
 
-          <FadeUp delay={0.1} className="mt-8">
-            <TextLink to="/founder">View leadership profiles, credentials & public record</TextLink>
+          <FadeUp delay={0.1} className="mt-8 flex flex-wrap items-center gap-6">
+            <TextLink to="/leadership">Explore all 9 executive leadership & co-owner profiles</TextLink>
+            <TextLink to="/founder">Read Founder Dr. Azad's clinical dossier & director qualifications</TextLink>
           </FadeUp>
         </div>
       </div>

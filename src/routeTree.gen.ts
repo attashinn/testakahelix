@@ -16,6 +16,7 @@ import { Route as ApproachRouteImport } from './routes/approach'
 import { Route as BookRouteImport } from './routes/book'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FounderRouteImport } from './routes/founder'
+import { Route as LeadershipRouteImport } from './routes/leadership'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SignInRouteImport } from './routes/sign-in'
@@ -57,6 +58,11 @@ const ContactRoute = ContactRouteImport.update({
 const FounderRoute = FounderRouteImport.update({
   id: '/founder',
   path: '/founder',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeadershipRoute = LeadershipRouteImport.update({
+  id: '/leadership',
+  path: '/leadership',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginRoute = LoginRouteImport.update({
@@ -103,6 +109,7 @@ export interface FileRoutesByFullPath {
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/founder': typeof FounderRoute
+  '/leadership': typeof LeadershipRoute
   '/login': typeof LoginRoute
   '/services': typeof ServicesRouteWithChildren
   '/sign-in': typeof SignInRoute
@@ -119,6 +126,7 @@ export interface FileRoutesByTo {
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/founder': typeof FounderRoute
+  '/leadership': typeof LeadershipRoute
   '/login': typeof LoginRoute
   '/sign-in': typeof SignInRoute
   '/track-record': typeof TrackRecordRoute
@@ -135,6 +143,7 @@ export interface FileRoutesById {
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/founder': typeof FounderRoute
+  '/leadership': typeof LeadershipRoute
   '/login': typeof LoginRoute
   '/services': typeof ServicesRouteWithChildren
   '/sign-in': typeof SignInRoute
@@ -153,6 +162,7 @@ export interface FileRouteTypes {
     | '/book'
     | '/contact'
     | '/founder'
+    | '/leadership'
     | '/login'
     | '/services'
     | '/sign-in'
@@ -169,6 +179,7 @@ export interface FileRouteTypes {
     | '/book'
     | '/contact'
     | '/founder'
+    | '/leadership'
     | '/login'
     | '/sign-in'
     | '/track-record'
@@ -184,6 +195,7 @@ export interface FileRouteTypes {
     | '/book'
     | '/contact'
     | '/founder'
+    | '/leadership'
     | '/login'
     | '/services'
     | '/sign-in'
@@ -201,6 +213,7 @@ export interface RootRouteChildren {
   BookRoute: typeof BookRoute
   ContactRoute: typeof ContactRoute
   FounderRoute: typeof FounderRoute
+  LeadershipRoute: typeof LeadershipRoute
   LoginRoute: typeof LoginRoute
   ServicesRoute: typeof ServicesRouteWithChildren
   SignInRoute: typeof SignInRoute
@@ -257,6 +270,13 @@ declare module '@tanstack/react-router' {
       path: '/founder'
       fullPath: '/founder'
       preLoaderRoute: typeof FounderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leadership': {
+      id: '/leadership'
+      path: '/leadership'
+      fullPath: '/leadership'
+      preLoaderRoute: typeof LeadershipRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login': {
@@ -333,6 +353,7 @@ const rootRouteChildren: RootRouteChildren = {
   BookRoute: BookRoute,
   ContactRoute: ContactRoute,
   FounderRoute: FounderRoute,
+  LeadershipRoute: LeadershipRoute,
   LoginRoute: LoginRoute,
   ServicesRoute: ServicesRouteWithChildren,
   SignInRoute: SignInRoute,
