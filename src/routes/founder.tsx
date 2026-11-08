@@ -20,6 +20,7 @@ import portrait from "@/assets/azad-portrait.jpg";
 import { Cta, TextLink } from "@/components/site/Cta";
 import { FadeUp, ImageReveal, RevealText, introDelay } from "@/components/site/motion";
 import { Chip } from "@/components/site/Section";
+import { TrajectoryMap } from "@/components/site/TrajectoryMap";
 import { book, company, credentials, proof, route } from "@/content/site";
 import { cn } from "@/lib/utils";
 
@@ -454,62 +455,11 @@ export function DedicatedFounderPage() {
           </FadeUp>
         </div>
 
-        {/* Visual Timeline Stepper */}
-        <div className="mt-14 relative">
-          <div className="space-y-6">
-            {route.map((r, i) => {
-              const institutionLogos = [
-                "Sir Salimullah Medical College",
-                "Asian Institute of Technology",
-                "KU Leuven (Center for Human Genetics)",
-                "Princess Margaret Cancer Centre / UHN",
-                "UT MD Anderson Cancer Center",
-                "Albert Einstein College of Medicine / Montefiore",
-              ];
-              const highlightInstitution = institutionLogos[i] || r.what;
-
-              return (
-                <FadeUp key={r.city} delay={i * 0.05}>
-                  <div className="group rounded-[6px] border border-border bg-paper p-6 md:p-8 transition-all duration-300 hover:border-blue hover:shadow-sm">
-                    <div className="grid-12 items-baseline gap-y-3">
-                      <div className="col-span-12 sm:col-span-2 flex items-center gap-3">
-                        <span className="label-mono text-xs font-semibold text-blue px-2.5 py-1 rounded bg-blue/10">
-                          0{i + 1}
-                        </span>
-                        <span className="label-mono text-xs text-muted-foreground font-mono">{r.years}</span>
-                      </div>
-
-                      <div className="col-span-12 sm:col-span-4">
-                        <h3 className="font-display text-2xl font-medium tracking-tight text-foreground group-hover:text-blue transition-colors">
-                          {r.city}
-                        </h3>
-                        <p className="label-mono text-xs text-muted-foreground mt-1">{highlightInstitution}</p>
-                      </div>
-
-                      <div className="col-span-12 sm:col-span-6">
-                        <p className="text-[0.9375rem] leading-relaxed text-foreground/85">{r.what}</p>
-                        {r.city === "Leuven" && (
-                          <div className="mt-3 text-xs text-muted-foreground bg-mist p-2.5 rounded-[3px] border border-border/60">
-                            <strong>Doctoral Focus:</strong> Identified novel functional mutations in the epithelial sodium channel (ENaC) subunits in non-CFTR bronchiectasis and cystic fibrosis-like pulmonary disease.
-                          </div>
-                        )}
-                        {r.city === "Toronto" && (
-                          <div className="mt-3 text-xs text-muted-foreground bg-mist p-2.5 rounded-[3px] border border-border/60">
-                            <strong>CIHR Fellowship:</strong> Investigated high-throughput somatic mutation signatures, genomic instability, and biomarker discovery in translational cancer biology.
-                          </div>
-                        )}
-                        {r.city === "New York" && (
-                          <div className="mt-3 text-xs text-muted-foreground bg-mist p-2.5 rounded-[3px] border border-border/60">
-                            <strong>Dual LGG Certification:</strong> Completed the rigorous ABMGG-accredited Laboratory Genetics and Genomics fellowship covering full-scope cytogenomics and molecular diagnostics.
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </FadeUp>
-              );
-            })}
-          </div>
+        {/* Interactive World Trajectory Map with Detailed Station Dossier */}
+        <div className="mt-12">
+          <FadeUp delay={0.1}>
+            <TrajectoryMap />
+          </FadeUp>
         </div>
       </section>
 
